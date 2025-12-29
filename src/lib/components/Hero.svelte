@@ -1,4 +1,6 @@
 <script>
+	import { onMount } from 'svelte';
+
 	let messages = [
 		{
 			role: 'AI',
@@ -13,22 +15,38 @@
 			text: "That hesitation gives the defensive end just enough time to break through the line. SACK! That's the game right there."
 		}
 	];
+
+    let visibleMessages = $state([]);
+
+    // Simulate typing/revealing effect
+    onMount(() => {
+        let i = 0;
+        const interval = setInterval(() => {
+            if (i < messages.length) {
+                visibleMessages = [...visibleMessages, messages[i]];
+                i++;
+            } else {
+                clearInterval(interval);
+            }
+        }, 2500); // New message every 2.5 seconds
+
+        return () => clearInterval(interval);
+    });
 </script>
 
-<section class="hero">
-	<div class="video-container">
-		<!-- Placeholder video since I cannot browse for a direct MP4 link easily without browser access.
-             Using a solid color background with text for now, or a generic placeholder if available. -->
-        <video autoplay loop muted playsinline poster="https://placehold.co/1920x1080/0f1115/00afea?text=American+Football+Play">
-            <!-- Ideally this would be a real video source -->
-             <source src="https://videos.pexels.com/video-files/5377508/5377508-uhd_2732_1440_25fps.mp4" type="video/mp4">
-             Your browser does not support the video tag.
-        </video>
-        <div class="overlay"></div>
+<div class="hero-layout">
+	<div class="video-side">
+        <div class="video-wrapper">
+            <video autoplay loop muted playsinline poster="https://placehold.co/800x600/0f1115/00afea?text=Football+Play">
+                <source src="https://videos.pexels.com/video-files/5377508/5377508-uhd_2732_1440_25fps.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="live-badge">LIVE ANALYSIS</div>
+        </div>
 	</div>
 
-	<div class="content">
-		<h1>GAME TIME <span class="highlight">INSIGHTS</span></h1>
+	<div class="info-side">
+		<h1>GAME TIME <br/><span class="highlight">INSIGHTS</span></h1>
 
 		<div class="chat-interface">
 			<div class="chat-header">
@@ -36,87 +54,109 @@
 				<span>HUDDLE AI COMPANION</span>
 			</div>
 			<div class="messages">
-				{#each messages as msg}
+				{#each visibleMessages as msg}
 					<div class="message">
 						<span class="role">{msg.role}</span>
 						<p>{msg.text}</p>
 					</div>
 				{/each}
+                {#if visibleMessages.length < messages.length}
+                    <div class="typing-indicator">
+                        <span>.</span><span>.</span><span>.</span>
+                    </div>
+                {/if}
 			</div>
 		</div>
 	</div>
-</section>
+</div>
 
 <style>
-	.hero {
-		position: relative;
-		height: 100vh;
-		width: 100%;
-		overflow: hidden;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		color: white;
-		font-family: 'Impact', sans-serif;
-	}
-
-	.video-container {
-		position: absolute;
-		top: 0;
-		left: 0;
+	.hero-layout {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 2rem;
 		width: 100%;
 		height: 100%;
-		z-index: 0;
+        align-items: center;
 	}
+
+    @media (min-width: 900px) {
+        .hero-layout {
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+    }
+
+	/* Video Side */
+	.video-side {
+		width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+	}
+
+    .video-wrapper {
+        position: relative;
+        width: 100%;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 0 40px rgba(0, 175, 234, 0.15);
+        border: 1px solid rgba(0, 175, 234, 0.3);
+        aspect-ratio: 16/9;
+    }
 
 	video {
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
+        display: block;
 	}
 
-    .overlay {
+    .live-badge {
         position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(15, 17, 21, 0.7); /* Darken the video */
-        z-index: 1;
+        top: 1rem;
+        left: 1rem;
+        background: #e91e63;
+        color: white;
+        padding: 0.25rem 0.75rem;
+        font-weight: bold;
+        font-size: 0.8rem;
+        border-radius: 4px;
+        font-family: sans-serif;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.3);
     }
 
-	.content {
-		position: relative;
-		z-index: 2;
+	/* Info Side */
+	.info-side {
 		display: flex;
 		flex-direction: column;
-		align-items: center;
-		width: 100%;
-		max-width: 1200px;
-		padding: 2rem;
+		justify-content: center;
 	}
 
 	h1 {
-		font-size: 4rem;
+		font-size: 3rem;
+        line-height: 1;
 		text-transform: uppercase;
 		margin-bottom: 2rem;
-		text-shadow: 0 0 20px rgba(0, 175, 234, 0.5);
-        text-align: center;
-        letter-spacing: 2px;
+		text-shadow: 0 0 20px rgba(0, 175, 234, 0.3);
+        letter-spacing: 1px;
 	}
 
 	.highlight {
 		color: #00afea;
+        font-size: 4rem;
 	}
 
 	.chat-interface {
-		background: rgba(15, 17, 21, 0.9);
-		border: 2px solid #00afea;
+		background: rgba(15, 17, 21, 0.5);
+		border: 1px solid rgba(0, 175, 234, 0.5);
 		border-radius: 8px;
 		padding: 1.5rem;
 		width: 100%;
-		max-width: 600px;
-		box-shadow: 0 0 30px rgba(0, 175, 234, 0.2);
+        box-sizing: border-box;
+        height: 400px; /* Fixed height for scroll */
+        display: flex;
+        flex-direction: column;
 	}
 
 	.chat-header {
@@ -128,8 +168,9 @@
 		padding-bottom: 0.5rem;
 		font-family: sans-serif;
 		font-weight: bold;
-		font-size: 0.9rem;
+		font-size: 0.8rem;
 		letter-spacing: 1px;
+        flex-shrink: 0;
 	}
 
 	.status-dot {
@@ -145,28 +186,53 @@
 		display: flex;
 		flex-direction: column;
 		gap: 1rem;
+        overflow-y: auto;
+        flex-grow: 1;
+        padding-right: 0.5rem;
 	}
+
+    /* Scrollbar styling */
+    .messages::-webkit-scrollbar {
+        width: 6px;
+    }
+    .messages::-webkit-scrollbar-track {
+        background: rgba(255,255,255,0.05);
+    }
+    .messages::-webkit-scrollbar-thumb {
+        background: rgba(0, 175, 234, 0.3);
+        border-radius: 3px;
+    }
 
 	.message {
 		display: flex;
 		flex-direction: column;
 		gap: 0.25rem;
-        animation: fadeIn 0.5s ease-out forwards;
+        animation: slideIn 0.3s ease-out forwards;
 	}
 
 	.role {
 		color: #00afea;
-		font-size: 0.8rem;
+		font-size: 0.75rem;
 		font-weight: bold;
 		font-family: sans-serif;
 	}
 
 	.message p {
 		font-family: sans-serif;
-		line-height: 1.5;
+		line-height: 1.4;
 		margin: 0;
-        font-size: 1.1rem;
+        font-size: 1rem;
+        color: #e0e0e0;
 	}
+
+    .typing-indicator span {
+        animation: blink 1.4s infinite both;
+        font-size: 2rem;
+        line-height: 10px;
+        color: #00afea;
+    }
+    .typing-indicator span:nth-child(2) { animation-delay: 0.2s; }
+    .typing-indicator span:nth-child(3) { animation-delay: 0.4s; }
 
 	@keyframes pulse {
 		0% { opacity: 1; }
@@ -174,19 +240,24 @@
 		100% { opacity: 1; }
 	}
 
-    @keyframes fadeIn {
-        from { opacity: 0; transform: translateY(10px); }
-        to { opacity: 1; transform: translateY(0); }
+    @keyframes slideIn {
+        from { opacity: 0; transform: translateX(-10px); }
+        to { opacity: 1; transform: translateX(0); }
+    }
+
+    @keyframes blink {
+        0% { opacity: 0.2; }
+        20% { opacity: 1; }
+        100% { opacity: 0.2; }
     }
 
     /* Responsive adjustments */
     @media (max-width: 768px) {
         h1 {
-            font-size: 2.5rem;
+            font-size: 2rem;
         }
-
-        .chat-interface {
-            width: 90%;
+        .highlight {
+            font-size: 2.5rem;
         }
     }
 </style>
