@@ -7,7 +7,7 @@
     const TOTAL_SECTIONS = 7;
 
     function scrollToSection(index) {
-        if (index >= 0 && index < TOTAL_SECTIONS) {
+        if (index >= 0 && index < TOTAL_SECTIONS && container) {
             const sectionElement = container.children[index];
             sectionElement.scrollIntoView({ behavior: 'smooth' });
         }
@@ -16,12 +16,24 @@
     function handleScroll() {
         if (!container) return;
 
-        const scrollPosition = container.scrollTop;
-        const sectionHeight = container.clientHeight;
-        const index = Math.round(scrollPosition / sectionHeight);
+        // Dynamic detection of active section based on which one is closest to the top of the viewport
+        const children = Array.from(container.children);
+        let closestIndex = activeIndex;
+        let minDistance = Infinity;
 
-        if (index !== activeIndex) {
-            activeIndex = index;
+        children.forEach((child, index) => {
+            const rect = child.getBoundingClientRect();
+            // Distance from the top of the viewport (container)
+            const distance = Math.abs(rect.top);
+
+            if (distance < minDistance) {
+                minDistance = distance;
+                closestIndex = index;
+            }
+        });
+
+        if (closestIndex !== activeIndex) {
+            activeIndex = closestIndex;
         }
     }
 
@@ -360,4 +372,14 @@
     }
 
     .separator { color: #444; }
+
+    /* Mobile Enhancements */
+    @media (max-width: 768px) {
+        .main-title { font-size: 3.5rem; }
+        .grid-2 { grid-template-columns: 1fr; }
+        .contact-form { flex-direction: column; align-items: center; }
+        input { width: 100%; max-width: 300px; }
+        .mockup-placeholder { height: 200px; }
+        .split { font-size: 1rem; }
+    }
 </style>

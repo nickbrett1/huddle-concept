@@ -19,19 +19,21 @@
 
 <style>
 	.section {
-		height: 100vh;
+		min-height: 100dvh; /* Allow growth, dynamic viewport height */
 		width: 100%;
 		display: flex;
-		align-items: center;
-		justify-content: center;
+		flex-direction: column;
 		scroll-snap-align: start;
 		position: relative;
-        padding: 2rem;
+        padding: 10vh 2rem; /* Safe padding for top/bottom bars */
+        box-sizing: border-box;
 	}
 
     .content {
         max-width: 800px;
+        width: 100%;
         text-align: center;
+        margin: auto; /* Center vertically if space allows, safe if overflows */
     }
 
     /* Style children generically to match the theme */
@@ -76,5 +78,19 @@
 
     .animated-wrapper :global(button:active) {
         transform: scale(0.95);
+    }
+
+    @media (max-width: 768px) {
+        .animated-wrapper :global(h1) {
+            font-size: 2.5rem;
+        }
+
+        .animated-wrapper :global(p) {
+            font-size: 1.1rem;
+        }
+
+        .section {
+            padding: 12vh 1.5rem; /* Extra top padding for mobile address bars */
+        }
     }
 </style>
