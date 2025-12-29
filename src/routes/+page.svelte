@@ -1,11 +1,19 @@
 <script>
 	import Hero from '$lib/components/Hero.svelte';
-	import PlaceholderSection from '$lib/components/PlaceholderSection.svelte';
+	import Problem from '$lib/components/Problem.svelte';
+	import Demo from '$lib/components/Demo.svelte';
+	import Engine from '$lib/components/Engine.svelte';
+	import Opportunity from '$lib/components/Opportunity.svelte';
+	import Footer from '$lib/components/Footer.svelte';
 </script>
 
 <div class="app-container">
 	<Hero />
-	<PlaceholderSection />
+	<Problem />
+	<Demo />
+	<Engine />
+	<Opportunity />
+	<Footer />
 </div>
 
 <style>
