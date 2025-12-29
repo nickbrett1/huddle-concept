@@ -1,23 +1,17 @@
 <script>
 	import { fly } from 'svelte/transition';
-    /** @type {{ title: string, content: string, index: number, visible: boolean }} */
-	let { title, content, index, visible } = $props();
+    /** @type {{ children: import('svelte').Snippet, visible: boolean }} */
+	let { children, visible } = $props();
 </script>
 
 <section class="section">
 	<div class="content">
 		{#if visible}
-			<h2
-                in:fly={{ y: 50, duration: 800, delay: 200 }}
-                class="title"
-            >
-                {title}
-            </h2>
 			<div
-                in:fly={{ y: 50, duration: 800, delay: 400 }}
-                class="body-text"
+                in:fly={{ y: 50, duration: 800, delay: 200 }}
+                class="animated-wrapper"
             >
-                {content}
+                {@render children()}
             </div>
 		{/if}
 	</div>
@@ -40,16 +34,47 @@
         text-align: center;
     }
 
-	.title {
+    /* Style children generically to match the theme */
+    .animated-wrapper :global(h1) {
 		font-size: 4rem;
 		margin-bottom: 1.5rem;
 		color: var(--accent-color);
         text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-	}
+    }
 
-    .body-text {
+    .animated-wrapper :global(p) {
         font-size: 1.5rem;
         line-height: 1.6;
         opacity: 0.9;
+        margin-bottom: 1rem;
+    }
+
+    .animated-wrapper :global(a) {
+        color: var(--accent-color);
+        text-decoration: none;
+        border-bottom: 2px solid transparent;
+        transition: border-color 0.3s;
+    }
+
+    .animated-wrapper :global(a:hover) {
+        border-bottom-color: var(--accent-color);
+    }
+
+    .animated-wrapper :global(button) {
+        font-size: 2rem;
+        padding: 1rem 2rem;
+        background: var(--accent-color);
+        color: var(--bg-color);
+        border: none;
+        border-radius: 4px;
+        transition: transform 0.2s;
+    }
+
+    .animated-wrapper :global(button:hover) {
+        transform: scale(1.05);
+    }
+
+    .animated-wrapper :global(button:active) {
+        transform: scale(0.95);
     }
 </style>

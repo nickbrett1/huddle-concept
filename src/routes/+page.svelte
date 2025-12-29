@@ -1,31 +1,17 @@
 <script>
 	import Section from '$lib/components/Section.svelte';
-	import { onMount } from 'svelte';
 
-	let sections = [
-		{
-			title: 'THE GAME PLAN',
-			content: 'Every great victory starts with a solid strategy. We analyze the field, understand the players, and execute with precision.'
-		},
-		{
-			title: 'UNMATCHED SPEED',
-			content: 'In this league, hesitation is defeat. Our platform delivers real-time data with zero latency, keeping you ahead of the competition.'
-		},
-		{
-			title: 'TEAM SYNERGY',
-			content: 'Seamless integration across all devices. Your team stays connected, sharing insights and plays instantly, anywhere, anytime.'
-		},
-		{
-			title: 'VICTORY LAP',
-			content: 'Celebrate your wins with comprehensive analytics. Measure your success and refine your tactics for the next season.'
-		}
-	];
+    let count = $state(0);
+	function increment() {
+		count += 1;
+	}
 
     let activeIndex = $state(0);
     let container;
+    const TOTAL_SECTIONS = 3;
 
     function scrollToSection(index) {
-        if (index >= 0 && index < sections.length) {
+        if (index >= 0 && index < TOTAL_SECTIONS) {
             const sectionElement = container.children[index];
             sectionElement.scrollIntoView({ behavior: 'smooth' });
         }
@@ -34,7 +20,6 @@
     function handleScroll() {
         if (!container) return;
 
-        // Simple scroll detection to find which section is most visible
         const scrollPosition = container.scrollTop;
         const sectionHeight = container.clientHeight;
         const index = Math.round(scrollPosition / sectionHeight);
@@ -54,17 +39,25 @@
     bind:this={container}
     onscroll={handleScroll}
 >
-	{#each sections as section, i}
-		<Section
-            title={section.title}
-            content={section.content}
-            index={i}
-            visible={i === activeIndex}
-        />
-	{/each}
+    <!-- Section 1: Welcome -->
+    <Section visible={activeIndex === 0}>
+        <h1>Welcome to SvelteKit</h1>
+    </Section>
+
+    <!-- Section 2: Documentation -->
+    <Section visible={activeIndex === 1}>
+        <p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+    </Section>
+
+    <!-- Section 3: Interactive Counter -->
+    <Section visible={activeIndex === 2}>
+        <button onclick={increment}>
+            Clicks: {count}
+        </button>
+    </Section>
 </div>
 
-{#if activeIndex < sections.length - 1}
+{#if activeIndex < TOTAL_SECTIONS - 1}
     <button class="down-arrow" onclick={nextSection} aria-label="Next Section">
         ↓
     </button>
@@ -75,7 +68,6 @@
 		height: 100vh;
 		overflow-y: scroll;
 		scroll-snap-type: y mandatory;
-        /* Hide scrollbar for cleaner look */
         scrollbar-width: none;
         -ms-overflow-style: none;
 	}
@@ -102,6 +94,8 @@
         transition: all 0.3s ease;
         z-index: 100;
         animation: bounce 2s infinite;
+        font-family: var(--font-heading);
+        cursor: pointer;
     }
 
     .down-arrow:hover {
