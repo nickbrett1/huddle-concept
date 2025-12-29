@@ -14,22 +14,30 @@
 
 <Section>
 	<div class="hero-content">
-		<h1 class="title">
+		<h1 class="brand-title">THE HUDDLE</h1>
+
+		<p class="tagline">DECODING THE GAME INTO THE STORIES YOU'LL LOVE.</p>
+
+		<div class="transformation-display">
 			<span class="intro">WE TRANSFORM</span>
-			<div class="line">
-				<div class="swap-container">
-					<span class="word from" class:active={!transformed}>JARGON</span>
-					<span class="word to" class:active={transformed}>DRAMA</span>
+			<div class="animation-row">
+				<div class="line">
+					<div class="swap-container">
+						<span class="word from" class:active={!transformed}>JARGON</span>
+						<span class="word to" class:active={transformed}>DRAMA</span>
+					</div>
+				</div>
+				<span class="connector">&</span>
+				<div class="line">
+					<div class="swap-container">
+						<span class="word from" class:active={!transformed}>STATS</span>
+						<span class="word to" class:active={transformed}>STORIES</span>
+					</div>
 				</div>
 			</div>
-			<span class="connector">&</span>
-			<div class="line">
-				<div class="swap-container">
-					<span class="word from" class:active={!transformed}>STATS</span>
-					<span class="word to" class:active={transformed}>STORIES</span>
-				</div>
-			</div>
-		</h1>
+		</div>
+
+		<p class="sub-headline">Bringing the "Drive to Survive" effect to every American sport.</p>
 
 		<div class="scroll-hint">
 			Scroll to Explore
@@ -46,31 +54,64 @@
 		align-items: center;
 		position: relative;
 		width: 100%;
+		text-align: center;
 	}
 
-	.title {
+	.brand-title {
 		font-family: 'Oswald', sans-serif;
-		font-size: clamp(4rem, 10vw, 8rem);
+		font-size: clamp(3rem, 8vw, 6rem);
 		font-weight: 700;
 		text-transform: uppercase;
-		color: white;
+		margin: 0 0 0.5rem 0;
+		letter-spacing: 0.05em;
+		line-height: 1;
+	}
+
+	.tagline {
+		font-size: clamp(1rem, 2vw, 1.5rem);
+		font-weight: 400;
+		color: rgba(255, 255, 255, 0.9);
+		margin: 0 0 3rem 0;
+		text-transform: uppercase;
+		letter-spacing: 0.1em;
+	}
+
+	.transformation-display {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		line-height: 1;
-		gap: 0.2em;
+		gap: 0.5rem;
+		margin-bottom: 3rem;
 	}
 
 	.intro {
-		font-size: 0.4em;
-		letter-spacing: 0.1em;
-		margin-bottom: 0.5em;
+		font-size: 0.8rem;
+		letter-spacing: 0.2em;
+		color: rgba(255, 255, 255, 0.6);
+	}
+
+	.animation-row {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+		font-family: 'Oswald', sans-serif;
+		font-size: clamp(2rem, 5vw, 4rem);
+		font-weight: 700;
+		text-transform: uppercase;
+		line-height: 1;
+	}
+
+	.sub-headline {
+		font-size: clamp(0.9rem, 1.5vw, 1.2rem);
+		color: #00afea;
+		margin: 0;
+		letter-spacing: 0.05em;
+		font-weight: 500;
 	}
 
 	.connector {
-		font-size: 0.3em;
+		font-size: 0.5em;
 		color: rgba(255, 255, 255, 0.5);
-		margin: 0.5em 0;
 	}
 
 	.line {
@@ -83,7 +124,13 @@
 		display: grid;
 		place-items: center;
 		position: relative;
+		width: 3ch; /* Approximate width to prevent layout shift */
 	}
+
+	/* Adjust width for longer words if needed, or let them flow */
+	.swap-container:first-child { width: 6ch; } /* JARGON/DRAMA */
+	.swap-container:last-child { width: 7ch; } /* STATS/STORIES */
+
 
 	.word {
 		grid-area: 1 / 1;
@@ -127,4 +174,9 @@
 		letter-spacing: 3px;
 		user-select: none;
 	}
+
+	/* Refine width overrides for specific words to center better */
+	.line:first-of-type .swap-container { min-width: 3.5em; }
+	.line:last-of-type .swap-container { min-width: 4em; }
+
 </style>

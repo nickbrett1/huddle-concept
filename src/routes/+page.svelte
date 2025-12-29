@@ -1,9 +1,11 @@
 <script>
 	import Hero from '$lib/components/Hero.svelte';
+	import PlaceholderSection from '$lib/components/PlaceholderSection.svelte';
 </script>
 
 <div class="app-container">
 	<Hero />
+	<PlaceholderSection />
 </div>
 
 <style>
