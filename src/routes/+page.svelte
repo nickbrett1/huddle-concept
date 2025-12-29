@@ -1,92 +1,108 @@
 <script>
 	import Hero from '$lib/components/Hero.svelte';
 	import Section from '$lib/components/Section.svelte';
+	import Demo from '$lib/components/Demo.svelte';
 </script>
 
 <div class="scroll-container">
-	<!-- Hero Section -->
+	<!-- Section 1: The Hero -->
 	<Section id="hero">
 		<Hero />
 	</Section>
 
-	<!-- Problem Section -->
+	<!-- Section 2: The Problem -->
 	<Section id="problem" title="The Problem">
-		<div class="problem-layout">
-			<div class="problem-text">
-				<h3>The Jargon Barrier</h3>
-				<p>"Cover 2", "Spider 2 Y Banana", "RPO"...</p>
-				<p>The game is faster than ever, but the commentary assumes you already have a PhD in football.</p>
+		<div class="problem-content">
+			<h3 class="angle">88% of us watch with a second screen, but we've never felt more alone.</h3>
+
+			<div class="barriers-grid">
+				<div class="barrier-card">
+					<h4>1. The Jargon Wall</h4>
+					<p>Terms like "Safety," "Nickel Defense," and "RBI" act as gatekeepers.</p>
+				</div>
+				<div class="barrier-card">
+					<h4>2. The Context Gap</h4>
+					<p>If you didn't grow up with the sport, you miss the 20-year rivalries and human drama that make the game "sticky."</p>
+				</div>
 			</div>
-            <div class="problem-visual">
-                <div class="confused-fan">
-                    <span>?</span>
-                </div>
-            </div>
+
+			<p class="copy-highlight">"Traditional broadcasts are built for the expert. We built something for the fan."</p>
 		</div>
 	</Section>
 
-	<!-- Interactive Demo Section -->
-	<Section id="demo" title="Interactive Demo">
-		<div class="demo-mockup">
-            <div class="mock-header">Jargon Decoder</div>
-            <div class="mock-body">
-                <div class="mock-input">
-                    <span class="label">Input Commentary:</span>
-                    <div class="input-box">"The Mike linebacker is showing blitz..."</div>
-                </div>
-                <div class="mock-arrow">⬇️</div>
-                <div class="mock-output">
-                    <span class="label">Translated:</span>
-                    <div class="output-box">The middle linebacker is pretending to rush the quarterback to trick the offense.</div>
-                </div>
-            </div>
-            <div class="mock-footer">
-                <button class="mock-btn">Try it Live</button>
-            </div>
+	<!-- Section 3: The Interactive Demo -->
+	<Section id="demo" title="The Interactive Demo">
+		<div class="demo-section-content">
+			<div class="developer-label">Developer Showcase: Live Svelte Component</div>
+			<Demo />
 		</div>
 	</Section>
 
-	<!-- Engine Section -->
+	<!-- Section 4: The Engine -->
 	<Section id="engine" title="The Engine">
-		<div class="engine-grid">
-            <div class="engine-card">
-                <h4>LLM Core</h4>
-                <p>Fine-tuned on 10,000+ hours of game commentary.</p>
-            </div>
-            <div class="engine-card">
-                <h4>Real-time API</h4>
-                <p>Sub-second latency sync with live broadcast feeds.</p>
-            </div>
-            <div class="engine-card">
-                <h4>Context Engine</h4>
-                <p>Aware of player stats, history, and game situation.</p>
-            </div>
-        </div>
+		<div class="engine-layout">
+			<div class="diagram">
+				<div class="node ingestion">
+					<h5>The Ingestion</h5>
+					<p>Real-time data feeds (Sportradar/WebSocket)</p>
+				</div>
+				<div class="arrow">↓</div>
+				<div class="node logic">
+					<h5>The Drama Meter</h5>
+					<p>Calculating tension using "Win Probability" swings</p>
+					<hr/>
+					<h5>The Adaptation Agent</h5>
+					<p>User Profile Vector adjusting analogies (e.g. UK Expat)</p>
+				</div>
+			</div>
+			<div class="dev-note">
+				<strong>Developer Note:</strong> Uses Server-Sent Events (SSE) for low-latency, battery-efficient streaming.
+			</div>
+		</div>
 	</Section>
 
-	<!-- Opportunity Section -->
+	<!-- Section 5: The Opportunity -->
 	<Section id="opportunity" title="The Opportunity">
-		<div class="opportunity-content">
-            <div class="stat-big">120M</div>
-            <p>Casual fans who feel alienated by technical commentary.</p>
-            <div class="growth-arrow">↗</div>
+		<div class="opportunity-list">
+			<div class="opp-item">
+				<h4>Reclaiming Attention</h4>
+				<p>Keeping the "Second Screen" inside the Fox ecosystem.</p>
+			</div>
+			<div class="opp-item">
+				<h4>Closing the Loop</h4>
+				<p>Shoppable TV. When the app knows you're watching a Nike ad or a specific player, it serves a one-tap purchase link.</p>
+			</div>
+			<div class="opp-item">
+				<h4>Demographic Bridge</h4>
+				<p>Onboarding the "unreachable" Gen Z and international audiences.</p>
+			</div>
 		</div>
 	</Section>
 
-	<!-- Author Section -->
-	<Section id="author" title="About the Team">
-		<div class="author-card">
-            <div class="avatar"></div>
-            <div class="author-info">
-                <h4>The Huddle Team</h4>
-                <p>Engineers & Sports Fanatics</p>
-            </div>
+	<!-- Section 6: The Author -->
+	<Section id="author" title="The Author">
+		<div class="author-profile">
+			<div class="profile-card">
+				<h4>Nick — Software Engineer</h4>
+				<p class="story">
+					"I moved from the UK to New York and realized I was missing out on the biggest cultural conversations in the US. I built this concept to solve my own problem using the same low-latency engineering I use in Finance."
+				</p>
+				<a href="https://www.google.com/search?q=fintechnick.com" class="profile-link" target="_blank" rel="noreferrer">Back to fintechnick.com</a>
+			</div>
 		</div>
 	</Section>
 
-	<!-- Footer Section -->
-	<footer class="footer">
-		<p>&copy; 2024 Huddle Concept. All rights reserved.</p>
+	<!-- Section 7: The Footer -->
+	<footer class="footer-section">
+		<h2>Let's evolve the broadcast together.</h2>
+		<div class="form-container">
+			<input type="email" placeholder="Interested in a prototype demo? Drop your email." />
+			<button>Connect</button>
+		</div>
+		<div class="social-links">
+			<a href="#">LinkedIn</a>
+			<a href="#">GitHub</a>
+		</div>
 	</footer>
 </div>
 
@@ -114,194 +130,189 @@
 		scroll-behavior: smooth;
 	}
 
-	.footer {
-		padding: 2rem;
+	/* Section Styling */
+	.problem-content, .demo-section-content, .engine-layout, .opportunity-list, .author-profile {
 		text-align: center;
-		color: rgba(255, 255, 255, 0.5);
-		font-size: 0.8rem;
-		scroll-snap-align: end;
+		max-width: 900px;
+		margin: 0 auto;
 	}
 
-    /* Problem Section */
-    .problem-layout {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 2rem;
-        align-items: center;
-    }
-    .problem-text h3 {
-        font-size: 2rem;
-        color: #e91e63;
-        margin-bottom: 1rem;
-    }
-    .problem-text p {
-        font-size: 1.2rem;
-        line-height: 1.6;
-        color: #ccc;
-    }
-    .problem-visual {
-        display: flex;
-        justify-content: center;
-    }
-    .confused-fan {
-        width: 150px;
-        height: 150px;
-        border: 4px solid #e91e63;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 4rem;
-        color: #e91e63;
-        font-family: 'Impact', sans-serif;
-    }
+	/* Problem */
+	.angle {
+		font-size: 2rem;
+		margin-bottom: 3rem;
+		color: #e91e63;
+	}
+	.barriers-grid {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 2rem;
+		margin-bottom: 3rem;
+	}
+	.barrier-card {
+		background: rgba(255,255,255,0.05);
+		padding: 2rem;
+		border-radius: 8px;
+		border: 1px solid rgba(255,255,255,0.1);
+	}
+	.barrier-card h4 {
+		color: #00afea;
+		font-size: 1.5rem;
+		margin-bottom: 1rem;
+	}
+	.copy-highlight {
+		font-size: 1.5rem;
+		font-style: italic;
+		color: #ccc;
+		border-left: 4px solid #00afea;
+		padding-left: 1rem;
+		display: inline-block;
+	}
 
-    /* Demo Section */
-    .demo-mockup {
-        border: 1px solid #00afea;
-        background: rgba(0, 175, 234, 0.05);
-        border-radius: 8px;
-        padding: 2rem;
-        width: 100%;
-        max-width: 800px;
-        margin: 0 auto;
-    }
-    .mock-header {
-        font-family: 'Oswald', sans-serif;
-        color: #00afea;
-        font-size: 1.5rem;
-        margin-bottom: 1.5rem;
-        border-bottom: 1px solid rgba(0, 175, 234, 0.3);
-        padding-bottom: 0.5rem;
-    }
-    .mock-body {
-        display: flex;
-        flex-direction: column;
-        gap: 1.5rem;
-    }
-    .mock-input, .mock-output {
-        display: flex;
-        flex-direction: column;
-        gap: 0.5rem;
-    }
-    .label {
-        font-size: 0.9rem;
-        color: #aaa;
-    }
-    .input-box {
-        background: rgba(255,255,255,0.1);
-        padding: 1rem;
-        border-radius: 4px;
-        font-family: monospace;
-        border-left: 3px solid #ccc;
-    }
-    .output-box {
-        background: rgba(0, 175, 234, 0.1);
-        padding: 1rem;
-        border-radius: 4px;
-        color: white;
-        border-left: 3px solid #00afea;
-    }
-    .mock-arrow {
-        text-align: center;
-        font-size: 1.5rem;
-        color: #00afea;
-    }
-    .mock-footer {
-        margin-top: 2rem;
-        text-align: right;
-    }
-    .mock-btn {
-        background: #00afea;
-        color: black;
-        border: none;
-        padding: 0.75rem 1.5rem;
-        font-weight: bold;
-        text-transform: uppercase;
-        cursor: pointer;
-        border-radius: 4px;
-    }
+	/* Demo */
+	.developer-label {
+		font-family: monospace;
+		color: #00afea;
+		margin-bottom: 1rem;
+		opacity: 0.7;
+	}
 
-    /* Engine Section */
-    .engine-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 2rem;
-    }
-    .engine-card {
-        background: rgba(255,255,255,0.03);
-        border: 1px solid rgba(255,255,255,0.1);
-        padding: 2rem;
-        border-radius: 8px;
-        text-align: center;
-        transition: transform 0.2s;
-    }
-    .engine-card:hover {
-        transform: translateY(-5px);
-        border-color: #00afea;
-    }
-    .engine-card h4 {
-        color: #00afea;
-        font-size: 1.5rem;
-        margin-bottom: 1rem;
-    }
+	/* Engine */
+	.diagram {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 1rem;
+		margin-bottom: 2rem;
+	}
+	.node {
+		background: rgba(0, 175, 234, 0.1);
+		border: 1px solid #00afea;
+		padding: 1.5rem;
+		border-radius: 8px;
+		width: 100%;
+		max-width: 500px;
+	}
+	.node h5 {
+		color: #00afea;
+		margin-bottom: 0.5rem;
+		font-size: 1.2rem;
+	}
+	.node p {
+		margin: 0;
+		font-size: 0.9rem;
+	}
+	.arrow {
+		font-size: 2rem;
+		color: #00afea;
+	}
+	.dev-note {
+		font-family: monospace;
+		background: rgba(255, 255, 255, 0.1);
+		padding: 1rem;
+		border-radius: 4px;
+		display: inline-block;
+		font-size: 0.9rem;
+	}
 
-    /* Opportunity Section */
-    .opportunity-content {
-        text-align: center;
-    }
-    .stat-big {
-        font-size: 8rem;
-        font-family: 'Oswald', sans-serif;
-        color: white;
-        text-shadow: 0 0 30px rgba(255,255,255,0.2);
-        line-height: 1;
-    }
-    .opportunity-content p {
-        font-size: 1.5rem;
-        color: #aaa;
-        max-width: 600px;
-        margin: 0 auto;
-    }
-    .growth-arrow {
-        font-size: 4rem;
-        color: #4caf50;
-        margin-top: 1rem;
-    }
+	/* Opportunity */
+	.opportunity-list {
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
+		text-align: left;
+	}
+	.opp-item h4 {
+		font-size: 1.8rem;
+		color: white;
+		margin-bottom: 0.5rem;
+	}
+	.opp-item p {
+		font-size: 1.1rem;
+		color: #aaa;
+		margin: 0;
+	}
 
-    /* Author Section */
-    .author-card {
-        display: flex;
-        align-items: center;
-        gap: 2rem;
-        background: rgba(255,255,255,0.05);
-        padding: 2rem;
-        border-radius: 12px;
-        max-width: 500px;
-        margin: 0 auto;
-    }
-    .avatar {
-        width: 80px;
-        height: 80px;
-        background: #00afea;
-        border-radius: 50%;
-    }
-    .author-info h4 {
-        margin: 0;
-        font-size: 1.5rem;
-    }
-    .author-info p {
-        margin: 0.5rem 0 0 0;
-        color: #aaa;
-    }
+	/* Author */
+	.profile-card {
+		background: rgba(255,255,255,0.05);
+		padding: 3rem;
+		border-radius: 12px;
+		border-left: 5px solid #00afea;
+		text-align: left;
+	}
+	.story {
+		font-size: 1.3rem;
+		font-style: italic;
+		line-height: 1.6;
+		margin: 1.5rem 0;
+	}
+	.profile-link {
+		color: #00afea;
+		text-decoration: none;
+		text-transform: uppercase;
+		font-weight: bold;
+		letter-spacing: 1px;
+	}
 
-    @media (max-width: 768px) {
-        .problem-layout {
-            grid-template-columns: 1fr;
-            text-align: center;
-        }
-        .stat-big {
-            font-size: 5rem;
-        }
-    }
+	/* Footer */
+	.footer-section {
+		height: 100vh;
+		scroll-snap-align: start;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		padding: 2rem;
+		background: linear-gradient(to top, rgba(0,175,234,0.1), transparent);
+	}
+	.footer-section h2 {
+		font-size: 3rem;
+		margin-bottom: 2rem;
+	}
+	.form-container {
+		display: flex;
+		gap: 1rem;
+		margin-bottom: 2rem;
+		width: 100%;
+		max-width: 500px;
+	}
+	.form-container input {
+		flex: 1;
+		padding: 1rem;
+		border-radius: 4px;
+		border: 1px solid #333;
+		background: rgba(255,255,255,0.1);
+		color: white;
+	}
+	.form-container button {
+		padding: 1rem 2rem;
+		background: #00afea;
+		border: none;
+		border-radius: 4px;
+		font-weight: bold;
+		cursor: pointer;
+		color: black;
+		text-transform: uppercase;
+	}
+	.social-links {
+		display: flex;
+		gap: 2rem;
+	}
+	.social-links a {
+		color: rgba(255,255,255,0.5);
+		text-decoration: none;
+		text-transform: uppercase;
+		font-size: 0.9rem;
+	}
+
+	@media (max-width: 768px) {
+		.barriers-grid {
+			grid-template-columns: 1fr;
+		}
+		.form-container {
+			flex-direction: column;
+		}
+	}
 </style>

@@ -32,6 +32,11 @@
 
         return () => clearInterval(interval);
     });
+
+    function scrollToExplore() {
+        const nextSection = document.getElementById('problem');
+        if (nextSection) nextSection.scrollIntoView({ behavior: 'smooth' });
+    }
 </script>
 
 <div class="hero-layout">
@@ -46,7 +51,12 @@
 	</div>
 
 	<div class="info-side">
-		<h1>GAME TIME <br/><span class="highlight">INSIGHTS</span></h1>
+		<h1>The Huddle: Decoding the game into the stories you'll love.</h1>
+        <p class="subheadline">
+            Bringing the "Drive to Survive" effect to every American sport. An AI-powered personal companion that translates jargon into drama and stats into stories.
+        </p>
+
+        <button onclick={scrollToExplore} class="cta-button">Scroll to Explore the Concept</button>
 
 		<div class="chat-interface">
 			<div class="chat-header">
@@ -131,21 +141,45 @@
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
+        text-align: left;
 	}
 
 	h1 {
-		font-size: 3rem;
-        line-height: 1;
+		font-size: 2.5rem;
+        line-height: 1.1;
 		text-transform: uppercase;
-		margin-bottom: 2rem;
+		margin-bottom: 1.5rem;
 		text-shadow: 0 0 20px rgba(0, 175, 234, 0.3);
         letter-spacing: 1px;
 	}
 
-	.highlight {
-		color: #00afea;
-        font-size: 4rem;
-	}
+    .subheadline {
+        font-size: 1.2rem;
+        color: #ccc;
+        margin-bottom: 2rem;
+        line-height: 1.5;
+        font-family: sans-serif;
+    }
+
+    .cta-button {
+        background-color: #00afea;
+        color: black;
+        border: none;
+        padding: 1rem 2rem;
+        font-size: 1rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        border-radius: 4px;
+        cursor: pointer;
+        align-self: flex-start;
+        margin-bottom: 2rem;
+        transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .cta-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 20px rgba(0, 175, 234, 0.4);
+    }
 
 	.chat-interface {
 		background: rgba(15, 17, 21, 0.5);
@@ -154,7 +188,7 @@
 		padding: 1.5rem;
 		width: 100%;
         box-sizing: border-box;
-        height: 400px; /* Fixed height for scroll */
+        height: 300px;
         display: flex;
         flex-direction: column;
 	}
@@ -221,7 +255,7 @@
 		font-family: sans-serif;
 		line-height: 1.4;
 		margin: 0;
-        font-size: 1rem;
+        font-size: 0.95rem;
         color: #e0e0e0;
 	}
 
@@ -254,10 +288,10 @@
     /* Responsive adjustments */
     @media (max-width: 768px) {
         h1 {
-            font-size: 2rem;
+            font-size: 1.8rem;
         }
-        .highlight {
-            font-size: 2.5rem;
+        .cta-button {
+            width: 100%;
         }
     }
 </style>
