@@ -16,30 +16,34 @@
 
 <Section {id}>
 	<div class="hero-content">
-		<h1 class="brand-title">THE HUDDLE</h1>
+		<div class="spacer"></div>
+		<div class="center-content">
+			<h1 class="brand-title">THE HUDDLE</h1>
 
-		<p class="tagline">DECODING THE GAME INTO THE STORIES YOU'LL LOVE.</p>
+			<p class="tagline">DECODING THE GAME INTO THE STORIES YOU'LL LOVE.</p>
 
-		<div class="transformation-display">
-			<span class="intro">WE TRANSFORM</span>
-			<div class="animation-row">
-				<div class="line">
-					<div class="swap-container">
-						<span class="word from" class:active={!transformed}>JARGON</span>
-						<span class="word to" class:active={transformed}>DRAMA</span>
+			<div class="transformation-display">
+				<span class="intro">WE TRANSFORM</span>
+				<div class="animation-row">
+					<div class="line">
+						<div class="swap-container">
+							<span class="word from" class:active={!transformed}>JARGON</span>
+							<span class="word to" class:active={transformed}>DRAMA</span>
+						</div>
 					</div>
-				</div>
-				<span class="connector">&</span>
-				<div class="line">
-					<div class="swap-container">
-						<span class="word from" class:active={!transformed}>STATS</span>
-						<span class="word to" class:active={transformed}>STORIES</span>
+					<span class="connector">&</span>
+					<div class="line">
+						<div class="swap-container">
+							<span class="word from" class:active={!transformed}>STATS</span>
+							<span class="word to" class:active={transformed}>STORIES</span>
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
 
-		<p class="sub-headline">Bringing the "Drive to Survive" effect to every American sport.</p>
+			<p class="sub-headline">Bringing the "Drive to Survive" effect to every American sport.</p>
+		</div>
+		<div class="spacer"></div>
 
 		<div class="scroll-hint">
 			Scroll to Explore
@@ -52,11 +56,23 @@
 		height: 100%;
 		display: flex;
 		flex-direction: column;
-		justify-content: center;
 		align-items: center;
 		position: relative;
 		width: 100%;
 		text-align: center;
+	}
+
+	.spacer {
+		flex: 1;
+		min-height: 0;
+	}
+
+	.center-content {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: 100%;
+		/* No margin auto here, spacers handle it */
 	}
 
 	.brand-title {
@@ -167,8 +183,7 @@
 	}
 
 	.scroll-hint {
-		position: absolute;
-		bottom: 2rem;
+		margin-bottom: 2rem;
 		color: rgba(255, 255, 255, 0.3);
 		font-family: 'Oswald', sans-serif;
 		font-size: 0.9rem;
