@@ -1,6 +1,7 @@
 <script>
 	import Section from './Section.svelte';
 	import { fade, slide } from 'svelte/transition';
+	import { onMount } from 'svelte';
 
 	let { id = "demo" } = $props();
 
@@ -198,6 +199,9 @@
 
 	let scriptTimeout = null;
 
+	let demoContainer = $state();
+	let isVisible = $state(false);
+
 	// --- Logic ---
 	function selectPersona(persona) {
 		console.log('Persona selected:', persona.id); // DEBUG
@@ -254,10 +258,26 @@
 		}
 	}
 
+	onMount(() => {
+		const observer = new IntersectionObserver((entries) => {
+			entries.forEach(entry => {
+				isVisible = entry.isIntersecting;
+			});
+		}, { threshold: 0.5 });
+
+		if (demoContainer) {
+			observer.observe(demoContainer);
+		}
+
+		return () => {
+			observer.disconnect();
+		}
+	});
+
 </script>
 
 <Section {id}>
-	<div class="demo-wrapper">
+	<div class="demo-wrapper" bind:this={demoContainer}>
 		<div class="columns">
 			<!-- Left Column: Controls -->
 			<div class="controls-col">
@@ -316,7 +336,7 @@
 						<iframe
 							width="100%"
 							height="100%"
-							src="https://www.youtube.com/embed/7w51A2TBBbE?autoplay=0&controls=0&rel=0"
+							src={"https://www.youtube.com/embed/7w51A2TBBbE?controls=0&rel=0&loop=1&playlist=7w51A2TBBbE&mute=1" + (isVisible ? "&autoplay=1" : "")}
 							title="YouTube video player"
 							frameborder="0"
 							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
