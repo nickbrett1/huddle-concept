@@ -21,7 +21,7 @@
 					</div>
 					<h3>Reclaiming Attention</h3>
 				</div>
-				<p>Keeping the "Second Screen" inside the Fox ecosystem.</p>
+				<p>Keeping the "Second Screen" inside the broadcaster ecosystem.</p>
 			</div>
 
 			<div class="card">
