@@ -192,8 +192,6 @@
 	// --- State ---
 	let selectedPersona = $state(null);
 	let messages = $state([]);
-	let showEngine = $state(false);
-	let currentMetadata = $state(null);
 	let isTyping = $state(false);
 
 	let scriptTimeout = null;
@@ -204,7 +202,6 @@
 		if (scriptTimeout) clearTimeout(scriptTimeout);
 		selectedPersona = persona;
 		messages = [];
-		currentMetadata = null;
 		isTyping = false;
 
 		runScript(persona.id, 0);
@@ -231,9 +228,6 @@
 		console.log('Processing step:', step); // DEBUG
 		if (step.type === 'broadcast' || step.type === 'huddle') {
 			messages = [...messages, { ...step, id: Date.now() }];
-			if (step.metadata) {
-				currentMetadata = step.metadata;
-			}
 			// Auto advance
 			runScript(personaId, stepIndex + 1);
 		} else if (step.type === 'user_choice') {
@@ -284,29 +278,6 @@
 					</div>
 				</div>
 
-				<div class="engine-control">
-					<div class="toggle-row">
-						<span class="label">ENGINE OVERLAY</span>
-						<label class="switch">
-							<input type="checkbox" bind:checked={showEngine}>
-							<span class="slider round"></span>
-						</label>
-					</div>
-
-					{#if showEngine}
-						<div class="engine-display" transition:slide>
-							<div class="engine-header">METADATA STREAM</div>
-							{#if currentMetadata}
-								<div class="meta-row"><span class="key">TRIGGER:</span> <span class="val">{currentMetadata.trigger}</span></div>
-								<div class="meta-row"><span class="key">CONTEXT:</span> <span class="val">{currentMetadata.context}</span></div>
-								<div class="meta-row"><span class="key">LOGIC:</span> <span class="val">{currentMetadata.logic}</span></div>
-								<div class="meta-row"><span class="key">TONE:</span> <span class="val">{currentMetadata.tone}</span></div>
-							{:else}
-								<div class="meta-row waiting">Waiting for AI response...</div>
-							{/if}
-						</div>
-					{/if}
-				</div>
 			</div>
 
 			<!-- Right Column: Phone -->
@@ -483,87 +454,6 @@
 		font-size: 0.85rem;
 		color: #ccc;
 	}
-
-	/* Engine Overlay */
-	.engine-control {
-		margin-top: 2rem;
-		border-top: 1px solid rgba(255, 255, 255, 0.1);
-		padding-top: 2rem;
-	}
-
-	.toggle-row {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		margin-bottom: 1rem;
-	}
-
-	.engine-display {
-		background: rgba(0, 0, 0, 0.5);
-		border: 1px solid #00afea;
-		padding: 1rem;
-		font-family: 'Courier New', monospace;
-		font-size: 0.85rem;
-		color: #00afea;
-		border-radius: 4px;
-	}
-
-	.engine-header {
-		border-bottom: 1px solid rgba(0, 175, 234, 0.3);
-		padding-bottom: 0.5rem;
-		margin-bottom: 0.5rem;
-		font-weight: bold;
-	}
-
-	.meta-row {
-		margin-bottom: 0.3rem;
-		display: flex;
-	}
-
-	.meta-row.waiting {
-		opacity: 0.5;
-		font-style: italic;
-	}
-
-	.key {
-		width: 70px;
-		opacity: 0.7;
-	}
-
-	.val {
-		color: white;
-		flex: 1;
-	}
-
-	/* Toggle Switch */
-	.switch {
-		position: relative;
-		display: inline-block;
-		width: 50px;
-		height: 24px;
-	}
-	.switch input { opacity: 0; width: 0; height: 0; }
-	.slider {
-		position: absolute;
-		cursor: pointer;
-		top: 0; left: 0; right: 0; bottom: 0;
-		background-color: #333;
-		transition: .4s;
-	}
-	.slider:before {
-		position: absolute;
-		content: "";
-		height: 16px;
-		width: 16px;
-		left: 4px;
-		bottom: 4px;
-		background-color: white;
-		transition: .4s;
-	}
-	input:checked + .slider { background-color: #00afea; }
-	input:checked + .slider:before { transform: translateX(26px); }
-	.slider.round { border-radius: 34px; }
-	.slider.round:before { border-radius: 50%; }
 
 	/* Right Column: Phone */
 	.phone-col {
