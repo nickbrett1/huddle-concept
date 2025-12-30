@@ -14,46 +14,52 @@
 
 		<div class="cards-container">
 			<div class="card">
-				<div class="card-icon">
-					<!-- Wall Icon -->
-					<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-						<rect width="18" height="18" x="3" y="3" rx="2"></rect>
-						<path d="M3 9h18"></path>
-						<path d="M3 15h18"></path>
-						<path d="M9 3v6"></path>
-						<path d="M15 3v6"></path>
-						<path d="M11 9v6"></path>
-						<path d="M7 15v6"></path>
-						<path d="M14 15v6"></path>
-					</svg>
+				<div class="card-header">
+					<div class="card-icon">
+						<!-- Wall Icon -->
+						<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+							<rect width="18" height="18" x="3" y="3" rx="2"></rect>
+							<path d="M3 9h18"></path>
+							<path d="M3 15h18"></path>
+							<path d="M9 3v6"></path>
+							<path d="M15 3v6"></path>
+							<path d="M11 9v6"></path>
+							<path d="M7 15v6"></path>
+							<path d="M14 15v6"></path>
+						</svg>
+					</div>
+					<h3>The Jargon Wall</h3>
 				</div>
-				<h3>The Jargon Wall</h3>
 				<p>Terms like "Safety," "Nickel Defense," and "RBI" act as gatekeepers.</p>
 			</div>
 
 			<div class="card">
-				<div class="card-icon">
-					<!-- Story Book Icon -->
-					<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-						<path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
-						<path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
-					</svg>
+				<div class="card-header">
+					<div class="card-icon">
+						<!-- Story Book Icon -->
+						<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+							<path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+							<path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+						</svg>
+					</div>
+					<h3>The Story Gap</h3>
 				</div>
-				<h3>The Story Gap</h3>
 				<p>If you didn't grow up with the sport, you miss the 20-year rivalries and human drama that make the game "sticky."</p>
 			</div>
 
 			<div class="card">
-				<div class="card-icon">
-					<!-- App Store / Grid Icon -->
-					<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-						<rect width="7" height="7" x="3" y="3" rx="1"></rect>
-						<rect width="7" height="7" x="14" y="3" rx="1"></rect>
-						<rect width="7" height="7" x="14" y="14" rx="1"></rect>
-						<rect width="7" height="7" x="3" y="14" rx="1"></rect>
-					</svg>
+				<div class="card-header">
+					<div class="card-icon">
+						<!-- App Store / Grid Icon -->
+						<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+							<rect width="7" height="7" x="3" y="3" rx="1"></rect>
+							<rect width="7" height="7" x="14" y="3" rx="1"></rect>
+							<rect width="7" height="7" x="14" y="14" rx="1"></rect>
+							<rect width="7" height="7" x="3" y="14" rx="1"></rect>
+						</svg>
+					</div>
+					<h3>The App Absence</h3>
 				</div>
-				<h3>The App Absence</h3>
 				<p>Existing second-screen apps prioritize betting and raw stats, offering little resource to explain the game and draw you back into the action on your terms.</p>
 			</div>
 		</div>
@@ -124,6 +130,10 @@
 		border-color: #00afea;
 	}
 
+	.card-header {
+		display: contents;
+	}
+
 	.card-icon {
 		color: #00afea;
 		margin-bottom: 0.5rem;
@@ -142,5 +152,27 @@
 		opacity: 0.8;
 		font-size: 1rem; /* Reduced */
 		line-height: 1.5;
+	}
+
+	@media (max-width: 768px) {
+		.card-header {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			align-items: center;
+			width: 100%;
+			margin-bottom: 0.5rem;
+		}
+
+		.card-header h3 {
+			flex: 1;
+			order: 1;
+		}
+
+		.card-header .card-icon {
+			order: 2;
+			margin-bottom: 0;
+			margin-left: 1rem;
+		}
 	}
 </style>
