@@ -167,8 +167,7 @@
 	}
 
 	.scroll-hint {
-		position: absolute;
-		bottom: 2rem;
+		margin-top: 4rem;
 		color: rgba(255, 255, 255, 0.3);
 		font-family: 'Oswald', sans-serif;
 		font-size: 0.9rem;

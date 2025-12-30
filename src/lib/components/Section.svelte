@@ -17,6 +17,7 @@
 		scroll-snap-align: start;
 		padding: 2rem;
 		padding-top: calc(70px + 2rem); /* Account for fixed header */
+		padding-bottom: 6rem; /* Extra padding for bottom content on mobile */
 		box-sizing: border-box;
 		position: relative;
 		overflow-x: hidden;
