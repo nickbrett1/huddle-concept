@@ -14,9 +14,9 @@
 	});
 </script>
 
-<Section {id}>
+<Section {id} bottomPadding="2rem">
 	<div class="hero-content">
-		<div class="spacer"></div>
+		<div class="spacer top"></div>
 		<div class="center-content">
 			<h1 class="brand-title">THE HUDDLE</h1>
 
@@ -43,7 +43,7 @@
 
 			<p class="sub-headline">Bringing the "Drive to Survive" effect to every American sport.</p>
 		</div>
-		<div class="spacer"></div>
+		<div class="spacer bottom"></div>
 
 		<div class="scroll-hint">
 			Scroll to Explore
@@ -63,8 +63,16 @@
 	}
 
 	.spacer {
+		min-height: 2rem;
+	}
+
+	.spacer.top {
 		flex: 1;
-		min-height: 0;
+	}
+
+	.spacer.bottom {
+		flex: 2;
+		min-height: 4rem; /* Force visible gap */
 	}
 
 	.center-content {
@@ -72,7 +80,6 @@
 		flex-direction: column;
 		align-items: center;
 		width: 100%;
-		/* No margin auto here, spacers handle it */
 	}
 
 	.brand-title {
