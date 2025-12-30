@@ -40,14 +40,17 @@
 					</div>
 
 					<div class="new-way" class:highlight={transformed}>
-						<span>DRAMA</span>
-						<span class="connector">&</span>
-						<span>STORIES FOR YOU</span>
+						<div class="new-way-line">
+							<span>DRAMA</span>
+							<span class="connector">&</span>
+							<span>STORIES</span>
+						</div>
+						<div class="new-way-line">FOR YOU</div>
 					</div>
 				</div>
 			</div>
 
-			<p class="sub-headline">Bringing a personalised drive to survive effect…</p>
+			<p class="sub-headline">Bringing a personalised "Drive to Survive" effect to every American sport.</p>
 		</div>
 		<div class="spacer bottom"></div>
 
@@ -150,6 +153,14 @@
 		color: #00afea; /* Electric Blue */
 		opacity: 0.8;
 		transform: scale(0.98);
+		flex-direction: column;
+		gap: 0;
+	}
+
+	.new-way-line {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
 	}
 
 	.new-way.highlight {
