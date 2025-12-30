@@ -6,7 +6,7 @@
 <Section {id}>
 	<div class="content-wrapper">
 		<h2 class="section-title">THE PROBLEM</h2>
-		<p class="subtitle">THE GAP</p>
+		<p class="subtitle">THE DISCONNECT</p>
 
 		<p class="section-text">
 			"88% of us use a second screen while watching, yet most of us are still locked out of the story."
@@ -37,6 +37,23 @@
 				</div>
 				<h3>The Context Gap</h3>
 				<p>If you didn't grow up with the sport, you miss the 20-year rivalries and human drama that make the game "sticky."</p>
+			</div>
+
+			<div class="card">
+				<div class="card-icon">
+					<!-- Insight Void / Disconnect Icon (Wifi Off) -->
+					<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+						<line x1="1" y1="1" x2="23" y2="23"></line>
+						<path d="M16.72 11.06A10.94 10.94 0 0 1 19 12.55"></path>
+						<path d="M5 12.55a10.94 10.94 0 0 1 5.17-2.39"></path>
+						<path d="M10.71 5.05A16 16 0 0 1 22.58 9"></path>
+						<path d="M1.42 9a15.91 15.91 0 0 1 4.7-2.88"></path>
+						<path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path>
+						<line x1="12" y1="20" x2="12.01" y2="20"></line>
+					</svg>
+				</div>
+				<h3>The Insight Void</h3>
+				<p>Existing second-screen apps prioritize betting and raw stats, offering no resource to explain the game and draw you back into the action on your terms.</p>
 			</div>
 		</div>
 	</div>
@@ -87,7 +104,7 @@
 		grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Slightly smaller min */
 		gap: 1.5rem; /* Reduced gap */
 		width: 100%;
-		max-width: 900px;
+		max-width: 1150px; /* Increased to fit 3 cards */
 	}
 
 	.card {
