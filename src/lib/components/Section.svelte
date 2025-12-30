@@ -10,7 +10,9 @@
 	function checkScroll() {
 		if (!scrollContainer) return;
 		const { scrollTop, scrollHeight, clientHeight } = scrollContainer;
-		const isScrollable = scrollHeight > clientHeight;
+		// Only consider it scrollable if there's significant overflow (> 50px)
+		// This prevents it from showing on the Hero page if it's just a tiny bit over.
+		const isScrollable = (scrollHeight - clientHeight) > 50;
 		// Show if scrollable and not at the very bottom (with 20px buffer)
 		const isAtBottom = Math.ceil(scrollTop + clientHeight) >= scrollHeight - 20;
 		showScrollIndicator = isScrollable && !isAtBottom;
@@ -43,7 +45,6 @@
 
 	{#if showScrollIndicator}
 		<div class="scroll-indicator" transition:fade={{ duration: 200 }}>
-			<span class="text">SCROLL</span>
 			<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
 				<polyline points="6 9 12 15 18 9"></polyline>
 			</svg>
@@ -107,31 +108,21 @@
 
 	.scroll-indicator {
 		position: absolute;
-		bottom: 5rem; /* Moved up to clear nav dots */
-		left: 50%;
-		transform: translateX(-50%);
+		bottom: 2rem;
+		right: 2rem;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		color: rgba(255, 255, 255, 0.8);
+		color: #00afea; /* Electric Blue */
 		pointer-events: none;
 		z-index: 10;
 		animation: bounce 2s infinite;
-		text-shadow: 0 2px 4px rgba(0,0,0,0.8);
-	}
-
-	.scroll-indicator .text {
-		font-family: 'Oswald', sans-serif;
-		font-size: 0.9rem;
-		font-weight: 500;
-		text-transform: uppercase;
-		letter-spacing: 0.1em;
-		margin-bottom: 0.2rem;
+		/* Removed text-shadow since it's colored now and simpler */
 	}
 
 	@keyframes bounce {
-		0%, 20%, 50%, 80%, 100% {transform: translateX(-50%) translateY(0);}
-		40% {transform: translateX(-50%) translateY(-5px);}
-		60% {transform: translateX(-50%) translateY(-3px);}
+		0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+		40% {transform: translateY(-5px);}
+		60% {transform: translateY(-3px);}
 	}
 </style>
