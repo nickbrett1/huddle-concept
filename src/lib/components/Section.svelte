@@ -10,8 +10,9 @@
 
 <style>
 	.section {
-		min-height: 100vh;
-		width: 100%;
+		height: 100vh;
+		width: 100vw;
+		min-width: 100vw;
 		display: flex;
 		flex-direction: column;
 		scroll-snap-align: start;
@@ -20,6 +21,7 @@
 		/* padding-bottom handled by style attribute */
 		box-sizing: border-box;
 		position: relative;
+		overflow-y: auto;
 		overflow-x: hidden;
 	}
 
