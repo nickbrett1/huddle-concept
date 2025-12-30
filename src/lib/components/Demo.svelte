@@ -9,19 +9,19 @@
 		{
 			id: 'expat',
 			name: 'THE EXPAT',
-			description: 'UK-based, knows Soccer/Cricket, new to NFL.',
+			description: 'UK-based, focuses on analogies to Soccer and Cricket.',
 			icon: '🌍'
 		},
 		{
 			id: 'casual',
 			name: 'THE CASUAL',
-			description: 'US-based, here for the halftime show & drama.',
+			description: 'US-based, focuses on the drama and "tea".',
 			icon: '🍿'
 		},
 		{
 			id: 'strategist',
 			name: 'THE STRATEGIST',
-			description: 'US-based, wants the high-level chess match.',
+			description: 'US-based, focuses on X\'s and O\'s and chess match.',
 			icon: '♟️'
 		}
 	];
@@ -31,51 +31,160 @@
 		expat: [
 			{
 				type: 'broadcast',
-				text: "Rodgers is back in the pocket... pressure coming... he's sacked! Loss of 8. That’s a massive blow on 3rd and long."
-			},
-			{
-				delay: 1000,
-				type: 'huddle',
-				text: "Ouch. Rodgers just got flattened. That’s the third time today. Imagine a goalkeeper being left totally exposed by his defense—he’s got no chance."
-			},
-			{
-				type: 'user_choice',
-				options: ["Wait, why is it such a 'massive blow' if it's only 3rd down?"]
-			},
-			{
-				type: 'huddle',
-				text: "Great question. In the NFL, you only get 4 tries (downs) to move 10 yards. Since it was 3rd down and they lost yardage, they basically have to kick the ball away now. They just 'wasted' their possession. It's like being 2-0 down with only 5 minutes left on the clock.",
-				metadata: {
-					trigger: 'User Query "Why 3rd down?"',
-					context: 'User_Literacy: 0.2',
-					logic: 'Map NFL_Down_System to Soccer_Match_Clock',
-					tone: 'Encouraging / Informal'
-				}
+				text: "Who's out in front? Wow, he takes on Za'Darius Smith!"
 			},
 			{
 				delay: 1500,
 				type: 'huddle',
-				text: "Also, keep an eye on Rodgers’ face. He’s yelling at his Left Tackle (the guy supposed to block for him). There’s a rumor they haven't spoken since training camp. The drama is peaking.",
+				text: "Look at the man in purple (#55) charging in. That’s a bit like a defender in football (soccer) sliding in on a striker just as he’s about to take a shot.",
 				metadata: {
-					trigger: 'Contextual Update',
-					context: 'Narrative_Archive: Rodgers_vs_Line',
-					logic: 'Inject "Soap Opera" Hook',
-					tone: 'Dramatic / Insider'
+					trigger: 'Visual Event: Sack',
+					context: 'User_Literacy: Low (NFL)',
+					logic: 'Analogy: Soccer_Slide_Tackle',
+					tone: 'Educational'
+				}
+			},
+			{
+				delay: 2000,
+				type: 'huddle',
+				text: "Rodgers gets the ball away, but he gets a proper 'clobbering' afterward. In the NFL, you’re allowed to hit the 'batsman' even after the ball is gone if you're within a step.",
+				metadata: {
+					trigger: 'Follow-up: Late Hit?',
+					context: 'Rule_Check: Roughing Passer',
+					logic: 'Analogy: Cricket_Batsman',
+					tone: 'Informative / Humorous'
+				}
+			},
+			{
+				delay: 1000,
+				type: 'broadcast',
+				text: "And then he's going to go tell him... look, he's laughing!"
+			},
+			{
+				type: 'user_choice',
+				options: ["Why are they smiling then? In the Premier League, that would be a red card!"]
+			},
+			{
+				delay: 500,
+				type: 'broadcast',
+				text: "He didn't back down. I love that. You talk about—"
+			},
+			{
+				delay: 1000,
+				type: 'huddle',
+				text: "They used to be teammates! It’s like Frank Lampard tackling John Terry—it’s high-intensity, but they're mates off the pitch.",
+				metadata: {
+					trigger: 'User Query: "Why smiling?"',
+					context: 'Player_History: GB_Packers',
+					logic: 'Social_Graph: Teammates',
+					tone: 'Insightful'
 				}
 			}
 		],
 		casual: [
 			{
+				type: 'broadcast',
+				text: "Who's out in front? Wow, he takes on Za'Darius Smith!"
+			},
+			{
+				delay: 1500,
 				type: 'huddle',
-				text: "Welcome! We'll keep the jargon low and the drama high. Tap 'The Expat' to see the full demo for now!",
-				metadata: { trigger: 'Init', context: 'New User', logic: 'Default Welcome', tone: 'Friendly'}
+				text: "OMG, look at Za'Darius Smith going right for his old boss! The 'ex-teammate revenge' energy is off the charts today.",
+				metadata: {
+					trigger: 'Visual Event: Sack',
+					context: 'Narrative: Rivalry',
+					logic: 'Highlight: Emotional Arc',
+					tone: 'Dramatic / Hype'
+				}
+			},
+			{
+				delay: 2000,
+				type: 'huddle',
+				text: "Smith was actually Rodgers’ teammate in Green Bay just last year. He definitely wanted to remind Aaron what he’s missing in Minnesota.",
+				metadata: {
+					trigger: 'Contextual Update',
+					context: 'History: Smith_vs_Rodgers',
+					logic: 'Backstory Injection',
+					tone: 'Gossipy'
+				}
+			},
+			{
+				delay: 1000,
+				type: 'broadcast',
+				text: "And then he's going to go tell him... look, he's laughing!"
+			},
+			{
+				type: 'user_choice',
+				options: ["Rodgers looks like he’s about to scream, but then he starts laughing?"]
+			},
+			{
+				delay: 500,
+				type: 'broadcast',
+				text: "He didn't back down. I love that. You talk about—"
+			},
+			{
+				delay: 1000,
+				type: 'huddle',
+				text: "He's playing it off! He hates getting hit, but he knows if he gets mad, the Vikings fans (and Smith) will know they’ve gotten under his skin.",
+				metadata: {
+					trigger: 'User Observation: Reaction',
+					context: 'Psych_Profile: Rodgers',
+					logic: 'Interpretation: Body Language',
+					tone: 'Insider'
+				}
 			}
 		],
 		strategist: [
 			{
+				type: 'broadcast',
+				text: "Who's out in front? Wow, he takes on Za'Darius Smith!"
+			},
+			{
+				delay: 1500,
 				type: 'huddle',
-				text: "Ready for the X's and O's? Tap 'The Expat' to see the full demo for now!",
-				metadata: { trigger: 'Init', context: 'New User', logic: 'Default Welcome', tone: 'Professional'}
+				text: "Vikings are showing a 'Sugar' front to confuse the protection. Watch Smith (#55) use a speed-to-power move on the edge.",
+				metadata: {
+					trigger: 'Visual Event: Pre-snap',
+					context: 'Formation: Sugar_Front',
+					logic: 'Technique_ID: Speed_to_Power',
+					tone: 'Technical / Analytical'
+				}
+			},
+			{
+				delay: 2000,
+				type: 'huddle',
+				text: "Rodgers is forced into an 'off-platform' throw. Smith finishes through the whistle to ensure the hit affects Rodgers' rhythm for the next drive.",
+				metadata: {
+					trigger: 'Visual Event: Throw Mechanics',
+					context: 'QB_Mechanics: Off_Platform',
+					logic: 'Impact_Analysis',
+					tone: 'Professional'
+				}
+			},
+			{
+				delay: 1000,
+				type: 'broadcast',
+				text: "And then he's going to go tell him... look, he's laughing!"
+			},
+			{
+				type: 'user_choice',
+				options: ["Did the Right Tackle miss the 'hot' read there?"]
+			},
+			{
+				delay: 500,
+				type: 'broadcast',
+				text: "He didn't back down. I love that. You talk about—"
+			},
+			{
+				delay: 1000,
+				type: 'huddle',
+				text: "The Vikings' interior line slanted left, which pulled the help away from Smith. It created a 1-on-1 matchup that the Vikings' DC identified in the film room.",
+				metadata: {
+					trigger: 'User Query: "Blown Assignment?"',
+					context: 'Scheme: Zone_Blitz',
+					logic: 'Tactical_Breakdown',
+					tone: 'Expert'
+				}
 			}
 		]
 	};
@@ -204,10 +313,15 @@
 			<div class="phone-col">
 				<div class="tv-mockup">
 					<div class="tv-screen">
-						<div class="tv-placeholder">
-							<span>LIVE GAME FEED</span>
-							<small>(Clip Placeholder)</small>
-						</div>
+						<iframe
+							width="100%"
+							height="100%"
+							src="https://www.youtube.com/embed/7w51A2TBBbE?autoplay=0&controls=0&rel=0"
+							title="YouTube video player"
+							frameborder="0"
+							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+							allowfullscreen
+						></iframe>
 					</div>
 					<div class="tv-stand"></div>
 				</div>
