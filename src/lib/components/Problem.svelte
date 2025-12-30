@@ -112,7 +112,7 @@
 	.subtitle {
 		font-size: clamp(1rem, 2vw, 1.5rem);
 		font-weight: 400;
-		color: rgba(255, 255, 255, 0.9);
+		color: #FFFFFF;
 		margin: 0 0 3rem 0;
 		text-transform: uppercase;
 		letter-spacing: 0.1em;
