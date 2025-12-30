@@ -153,10 +153,11 @@
 			<!-- Left Column: Controls -->
 			<div class="controls-col">
 				<h2 class="section-title">THE LIVE HUDDLE</h2>
-				<p class="subtitle">Experience the "Step Function" difference.</p>
+				<p class="subtitle">Experience the interactive demo.</p>
 
 				<div class="persona-selector">
 					<h3 class="label">PICK YOUR PERSONA</h3>
+					<p class="persona-footnote">In a real implementation, personas would be highly personalised based on the users past interaction with the app and other preferences. This wouldn’t be a selection step.</p>
 					<div class="buttons">
 						{#each personas as persona}
 							<button
@@ -201,6 +202,16 @@
 
 			<!-- Right Column: Phone -->
 			<div class="phone-col">
+				<div class="tv-mockup">
+					<div class="tv-screen">
+						<div class="tv-placeholder">
+							<span>LIVE GAME FEED</span>
+							<small>(Clip Placeholder)</small>
+						</div>
+					</div>
+					<div class="tv-stand"></div>
+				</div>
+
 				<div class="phone-mockup">
 					<div class="phone-header">
 						<div class="signal">5G</div>
@@ -295,9 +306,17 @@
 	.label {
 		font-size: 1.2rem;
 		color: #00afea;
-		margin-bottom: 1rem;
+		margin-bottom: 0.5rem;
 		display: block;
 		font-weight: 700;
+	}
+
+	.persona-footnote {
+		font-size: 0.8rem;
+		color: #888;
+		margin-bottom: 1.5rem;
+		line-height: 1.4;
+		max-width: 90%;
 	}
 
 	.buttons {
@@ -436,7 +455,58 @@
 	.phone-col {
 		flex: 1;
 		display: flex;
+		flex-direction: column;
 		justify-content: center;
+		align-items: center;
+		gap: 2rem;
+	}
+
+	.tv-mockup {
+		width: 320px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.tv-screen {
+		width: 100%;
+		aspect-ratio: 16/9;
+		background: #000;
+		border: 8px solid #222;
+		border-radius: 4px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		position: relative;
+		box-shadow: 0 0 30px rgba(0, 175, 234, 0.1);
+	}
+
+	.tv-placeholder {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		color: #444;
+		font-family: 'Oswald', sans-serif;
+		letter-spacing: 1px;
+	}
+
+	.tv-placeholder span {
+		font-size: 1.2rem;
+		font-weight: bold;
+	}
+
+	.tv-placeholder small {
+		font-size: 0.8rem;
+		opacity: 0.7;
+	}
+
+	.tv-stand {
+		width: 80px;
+		height: 10px;
+		background: #222;
+		margin-top: 0;
+		border-bottom-left-radius: 8px;
+		border-bottom-right-radius: 8px;
 	}
 
 	.phone-mockup {
