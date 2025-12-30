@@ -6,7 +6,7 @@
 <Section {id}>
 	<div class="content-wrapper">
 		<h2 class="section-title">THE PROBLEM</h2>
-		<p class="subtitle">THE DISCONNECT</p>
+		<p class="subtitle">THE HIGH BARRIER TO ENTRY FOR THE NEXT GENERATION OF FANS.</p>
 
 		<p class="section-text">
 			"88% of us use a second screen while watching, yet most of us are still locked out of the story."
@@ -110,12 +110,12 @@
 	}
 
 	.subtitle {
-		font-family: 'Oswald', sans-serif;
-		font-size: 1.2rem; /* Reduced */
-		color: #00afea;
-		letter-spacing: 0.2em;
-		margin-bottom: 1.5rem; /* Reduced */
+		font-size: clamp(1rem, 2vw, 1.5rem);
+		font-weight: 400;
+		color: #FFFFFF;
+		margin: 0 0 3rem 0;
 		text-transform: uppercase;
+		letter-spacing: 0.1em;
 	}
 
 	.section-text {

@@ -277,8 +277,10 @@
 		<div class="columns">
 			<!-- Left Column: Controls -->
 			<div class="controls-col">
-				<h2 class="section-title">THE LIVE HUDDLE</h2>
-				<p class="subtitle">Experience the interactive demo.</p>
+				<div class="header-group">
+					<h2 class="section-title">THE LIVE HUDDLE</h2>
+					<p class="subtitle">EXPERIENCE THE INTERACTIVE DEMO.</p>
+				</div>
 
 				<div class="persona-selector">
 					<h3 class="label">PICK YOUR PERSONA</h3>
@@ -404,10 +406,18 @@
 	}
 
 	.subtitle {
-		font-family: sans-serif;
-		color: #aaa;
-		margin-top: -1.5rem;
-		font-size: 1.1rem;
+		font-size: clamp(1rem, 2vw, 1.5rem);
+		font-weight: 400;
+		color: rgba(255, 255, 255, 0.9);
+		margin: 0.5rem 0 0 0; /* Small gap from title */
+		text-transform: uppercase;
+		letter-spacing: 0.1em;
+	}
+
+	.header-group {
+		display: flex;
+		flex-direction: column;
+		margin-bottom: 1rem;
 	}
 
 	.label {
