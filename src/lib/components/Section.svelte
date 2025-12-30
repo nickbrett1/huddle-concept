@@ -17,6 +17,7 @@
 		justify-content: center;
 		scroll-snap-align: start;
 		padding: 2rem;
+		padding-top: calc(70px + 2rem); /* Account for fixed header */
 		box-sizing: border-box;
 		position: relative;
 	}
