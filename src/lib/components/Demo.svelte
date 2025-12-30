@@ -255,9 +255,11 @@
 	onMount(() => {
 		const observer = new IntersectionObserver((entries) => {
 			entries.forEach(entry => {
-				isVisible = entry.isIntersecting;
+				if (entry.isIntersecting) {
+					isVisible = true;
+				}
 			});
-		}, { threshold: 0.5 });
+		}, { threshold: 0.1 });
 
 		if (demoContainer) {
 			observer.observe(demoContainer);
@@ -307,7 +309,7 @@
 						<iframe
 							width="100%"
 							height="100%"
-							src={"https://www.youtube.com/embed/7w51A2TBBbE?controls=0&rel=0&loop=1&playlist=7w51A2TBBbE&mute=1" + (isVisible ? "&autoplay=1" : "")}
+							src={"https://www.youtube.com/embed/7w51A2TBBbE?controls=0&rel=0&loop=1&playlist=7w51A2TBBbE&mute=1&playsinline=1" + (isVisible ? "&autoplay=1" : "")}
 							title="YouTube video player"
 							frameborder="0"
 							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
