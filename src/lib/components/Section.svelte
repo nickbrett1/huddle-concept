@@ -1,8 +1,8 @@
 <script>
-	let { children } = $props();
+	let { children, id = "" } = $props();
 </script>
 
-<section class="section">
+<section class="section" {id}>
 	<div class="content">
 		{@render children()}
 	</div>
@@ -17,8 +17,10 @@
 		justify-content: center;
 		scroll-snap-align: start;
 		padding: 2rem;
+		padding-top: calc(70px + 2rem); /* Account for fixed header */
 		box-sizing: border-box;
 		position: relative;
+		overflow: hidden; /* Prevent content from bleeding into other sections */
 	}
 
 	.content {
@@ -29,5 +31,13 @@
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
+		/* Ensure content doesn't get clipped at the top if it overflows */
+	}
+
+	@media (max-height: 800px) {
+		.content {
+			justify-content: flex-start; /* Start from top on small screens */
+			padding-top: 1rem;
+		}
 	}
 </style>

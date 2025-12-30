@@ -2,6 +2,8 @@
 	import Section from './Section.svelte';
 	import { onMount } from 'svelte';
 
+	let { id = "hero" } = $props();
+
 	let transformed = $state(false);
 
 	onMount(() => {
@@ -12,7 +14,7 @@
 	});
 </script>
 
-<Section>
+<Section {id}>
 	<div class="hero-content">
 		<h1 class="brand-title">THE HUDDLE</h1>
 

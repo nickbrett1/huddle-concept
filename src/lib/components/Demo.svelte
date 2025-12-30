@@ -1,8 +1,9 @@
 <script>
 	import Section from './Section.svelte';
+	let { id = "demo" } = $props();
 </script>
 
-<Section>
+<Section {id}>
 	<div class="content-wrapper">
 		<h2 class="section-title">INTERACTIVE DEMO</h2>
 		<div class="demo-placeholder">

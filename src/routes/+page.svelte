@@ -1,4 +1,5 @@
 <script>
+	import Header from '$lib/components/Header.svelte';
 	import Hero from '$lib/components/Hero.svelte';
 	import Problem from '$lib/components/Problem.svelte';
 	import Demo from '$lib/components/Demo.svelte';
@@ -6,6 +7,8 @@
 	import Opportunity from '$lib/components/Opportunity.svelte';
 	import Footer from '$lib/components/Footer.svelte';
 </script>
+
+<Header />
 
 <div class="app-container">
 	<Hero />
@@ -31,5 +34,6 @@
 		height: 100vh;
 		overflow-y: scroll;
 		scroll-snap-type: y mandatory;
+		scroll-behavior: smooth; /* Smooth scrolling for anchor links */
 	}
 </style>
