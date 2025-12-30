@@ -42,12 +42,12 @@
 					<div class="new-way" class:highlight={transformed}>
 						<span>DRAMA</span>
 						<span class="connector">&</span>
-						<span>STORIES</span>
+						<span>STORIES FOR YOU</span>
 					</div>
 				</div>
 			</div>
 
-			<p class="sub-headline">Bringing the "Drive to Survive" effect to every American sport.</p>
+			<p class="sub-headline">Bringing a personalised drive to survive effect…</p>
 		</div>
 		<div class="spacer bottom"></div>
 
