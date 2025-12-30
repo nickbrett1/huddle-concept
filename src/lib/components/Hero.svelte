@@ -55,7 +55,7 @@
 		<div class="spacer bottom"></div>
 
 		<div class="scroll-hint">
-			Scroll to Explore
+			Swipe to Explore
 		</div>
 	</div>
 </Section>
