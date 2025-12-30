@@ -70,4 +70,15 @@
 		margin: 0;
 		opacity: 0.7;
 	}
+
+	@media (max-width: 768px) {
+		.section-title {
+			font-size: 3rem;
+			margin-bottom: 1.5rem;
+		}
+
+		.grid {
+			gap: 1rem;
+		}
+	}
 </style>
