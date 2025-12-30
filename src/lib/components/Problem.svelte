@@ -9,7 +9,7 @@
 		<p class="subtitle">THE GAP</p>
 
 		<p class="section-text">
-			"88% of us watch with a second screen, <br>but we've never felt more alone."
+			"88% of us use a second screen while watching, yet most of us are still locked out of the story."
 		</p>
 
 		<div class="cards-container">
