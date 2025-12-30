@@ -17,10 +17,14 @@
 				<div class="card-icon">
 					<!-- Wall Icon -->
 					<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-						<rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect>
-						<line x1="4" y1="10" x2="20" y2="10"></line>
-						<line x1="10" y1="4" x2="10" y2="10"></line>
-						<line x1="14" y1="10" x2="14" y2="20"></line>
+						<rect width="18" height="18" x="3" y="3" rx="2"></rect>
+						<path d="M3 9h18"></path>
+						<path d="M3 15h18"></path>
+						<path d="M9 3v6"></path>
+						<path d="M15 3v6"></path>
+						<path d="M11 9v6"></path>
+						<path d="M7 15v6"></path>
+						<path d="M14 15v6"></path>
 					</svg>
 				</div>
 				<h3>The Jargon Wall</h3>
@@ -29,31 +33,28 @@
 
 			<div class="card">
 				<div class="card-icon">
-					<!-- Gap/Missing Link Icon -->
+					<!-- Story Book Icon -->
 					<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-						<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-						<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+						<path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+						<path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
 					</svg>
 				</div>
-				<h3>The Context Gap</h3>
+				<h3>The Story Gap</h3>
 				<p>If you didn't grow up with the sport, you miss the 20-year rivalries and human drama that make the game "sticky."</p>
 			</div>
 
 			<div class="card">
 				<div class="card-icon">
-					<!-- Insight Void / Disconnect Icon (Wifi Off) -->
+					<!-- App Store / Grid Icon -->
 					<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-						<line x1="1" y1="1" x2="23" y2="23"></line>
-						<path d="M16.72 11.06A10.94 10.94 0 0 1 19 12.55"></path>
-						<path d="M5 12.55a10.94 10.94 0 0 1 5.17-2.39"></path>
-						<path d="M10.71 5.05A16 16 0 0 1 22.58 9"></path>
-						<path d="M1.42 9a15.91 15.91 0 0 1 4.7-2.88"></path>
-						<path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path>
-						<line x1="12" y1="20" x2="12.01" y2="20"></line>
+						<rect width="7" height="7" x="3" y="3" rx="1"></rect>
+						<rect width="7" height="7" x="14" y="3" rx="1"></rect>
+						<rect width="7" height="7" x="14" y="14" rx="1"></rect>
+						<rect width="7" height="7" x="3" y="14" rx="1"></rect>
 					</svg>
 				</div>
-				<h3>The Insight Void</h3>
-				<p>Existing second-screen apps prioritize betting and raw stats, offering no resource to explain the game and draw you back into the action on your terms.</p>
+				<h3>The App Absence</h3>
+				<p>Existing second-screen apps prioritize betting and raw stats, offering little resource to explain the game and draw you back into the action on your terms.</p>
 			</div>
 		</div>
 	</div>
