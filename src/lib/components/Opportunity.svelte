@@ -23,7 +23,6 @@
 		font-weight: 700;
 		text-transform: uppercase;
 		margin-bottom: 1rem;
-		opacity: 0.5;
 	}
 
 	.stat {
