@@ -24,19 +24,25 @@
 
 			<div class="transformation-display">
 				<span class="intro">WE TRANSFORM</span>
-				<div class="animation-row">
-					<div class="line">
-						<div class="swap-container">
-							<span class="word from" class:active={!transformed}>JARGON</span>
-							<span class="word to" class:active={transformed}>DRAMA</span>
-						</div>
+
+				<div class="display-stack">
+					<div class="old-way">
+						<span>JARGON</span>
+						<span class="connector">&</span>
+						<span>STATS</span>
 					</div>
-					<span class="connector">&</span>
-					<div class="line">
-						<div class="swap-container">
-							<span class="word from" class:active={!transformed}>STATS</span>
-							<span class="word to" class:active={transformed}>STORIES</span>
-						</div>
+
+					<div class="arrow-container">
+						<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="arrow-icon">
+							<line x1="12" y1="5" x2="12" y2="19"></line>
+							<polyline points="19 12 12 19 5 12"></polyline>
+						</svg>
+					</div>
+
+					<div class="new-way" class:highlight={transformed}>
+						<span>DRAMA</span>
+						<span class="connector">&</span>
+						<span>STORIES</span>
 					</div>
 				</div>
 			</div>
@@ -105,7 +111,7 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		gap: 0.5rem;
+		gap: 1rem;
 		margin-bottom: 3rem;
 	}
 
@@ -113,17 +119,59 @@
 		font-size: 0.8rem;
 		letter-spacing: 0.2em;
 		color: rgba(255, 255, 255, 0.6);
+		margin-bottom: 0.5rem;
 	}
 
-	.animation-row {
+	.display-stack {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 0.5rem;
+	}
+
+	.old-way, .new-way {
 		display: flex;
 		align-items: center;
 		gap: 0.5rem;
 		font-family: 'Oswald', sans-serif;
-		font-size: clamp(2rem, 5vw, 4rem);
+		font-size: clamp(1.5rem, 4vw, 3rem);
 		font-weight: 700;
 		text-transform: uppercase;
 		line-height: 1;
+		transition: all 0.5s ease;
+	}
+
+	.old-way {
+		color: rgba(255, 255, 255, 0.4);
+		filter: blur(0.5px);
+	}
+
+	.new-way {
+		color: #00afea; /* Electric Blue */
+		opacity: 0.8;
+		transform: scale(0.98);
+	}
+
+	.new-way.highlight {
+		opacity: 1;
+		transform: scale(1.05);
+		text-shadow: 0 0 10px rgba(0, 175, 234, 0.5);
+	}
+
+	.connector {
+		font-size: 0.6em;
+		opacity: 0.7;
+	}
+
+	.arrow-container {
+		color: rgba(255, 255, 255, 0.3);
+		animation: bounce 2s infinite;
+	}
+
+	@keyframes bounce {
+		0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+		40% {transform: translateY(-5px);}
+		60% {transform: translateY(-3px);}
 	}
 
 	.sub-headline {
@@ -132,61 +180,7 @@
 		margin: 0;
 		letter-spacing: 0.05em;
 		font-weight: 500;
-	}
-
-	.connector {
-		font-size: 0.5em;
-		color: rgba(255, 255, 255, 0.5);
-	}
-
-	.line {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-	}
-
-	.swap-container {
-		display: grid;
-		place-items: center;
-		position: relative;
-		width: 3ch; /* Approximate width to prevent layout shift */
-	}
-
-	/* Adjust width for longer words if needed, or let them flow */
-	.swap-container:first-child { width: 6ch; } /* JARGON/DRAMA */
-	.swap-container:last-child { width: 7ch; } /* STATS/STORIES */
-
-
-	.word {
-		grid-area: 1 / 1;
-		transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-		white-space: nowrap;
-	}
-
-	.word.from {
-		opacity: 0;
-		transform: translateY(-50%) scale(0.9);
-		filter: blur(10px);
-	}
-
-	.word.from.active {
-		opacity: 0.5;
-		transform: translateY(0) scale(1);
-		filter: blur(0);
-		color: rgba(255, 255, 255, 0.5);
-	}
-
-	.word.to {
-		opacity: 0;
-		transform: translateY(50%) scale(1.1);
-		filter: blur(10px);
-		color: #00afea; /* Electric Blue */
-	}
-
-	.word.to.active {
-		opacity: 1;
-		transform: translateY(0) scale(1);
-		filter: blur(0);
+		margin-top: 1rem;
 	}
 
 	.scroll-hint {
@@ -198,9 +192,4 @@
 		letter-spacing: 3px;
 		user-select: none;
 	}
-
-	/* Refine width overrides for specific words to center better */
-	.line:first-of-type .swap-container { min-width: 3.5em; }
-	.line:last-of-type .swap-container { min-width: 4em; }
-
 </style>
