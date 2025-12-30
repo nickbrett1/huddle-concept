@@ -10,24 +10,23 @@
 
 <style>
 	.section {
-		height: 100vh;
+		min-height: 100vh;
 		width: 100%;
 		display: flex;
-		align-items: center;
-		justify-content: center;
+		flex-direction: column;
 		scroll-snap-align: start;
 		padding: 2rem;
 		padding-top: calc(70px + 2rem); /* Account for fixed header */
 		box-sizing: border-box;
 		position: relative;
-		overflow: hidden; /* Prevent content from bleeding into other sections */
+		overflow-x: hidden;
 	}
 
 	.content {
 		width: 100%;
 		max-width: 1200px;
 		margin: 0 auto;
-		height: 100%;
+		flex-grow: 1;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
