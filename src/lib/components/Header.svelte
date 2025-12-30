@@ -44,10 +44,11 @@
 			<button class="close-btn" onclick={closeMenu}>&times;</button>
 			<div class="nav-links">
 				<a href="#hero" onclick={closeMenu}>Home</a>
-				<a href="#problem" onclick={closeMenu}>The Problem</a>
+				<a href="#problem" onclick={closeMenu}>Problem</a>
 				<a href="#demo" onclick={closeMenu}>Demo</a>
-				<a href="#engine" onclick={closeMenu}>The Engine</a>
+				<a href="#engine" onclick={closeMenu}>Engine</a>
 				<a href="#opportunity" onclick={closeMenu}>Opportunity</a>
+				<a href="#footer" onclick={closeMenu}>Author</a>
 			</div>
 		</nav>
 	{/if}

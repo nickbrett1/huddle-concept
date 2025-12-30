@@ -10,11 +10,11 @@
 
 	const sections = [
 		{ id: 'hero', label: 'Home' },
-		{ id: 'problem', label: 'The Problem' },
+		{ id: 'problem', label: 'Problem' },
 		{ id: 'demo', label: 'Demo' },
-		{ id: 'engine', label: 'The Engine' },
+		{ id: 'engine', label: 'Engine' },
 		{ id: 'opportunity', label: 'Opportunity' },
-		{ id: 'footer', label: 'Contact' }
+		{ id: 'footer', label: 'Author' }
 	];
 
 	let activeIndex = $state(0);
