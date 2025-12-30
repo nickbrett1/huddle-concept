@@ -1,8 +1,8 @@
 <script>
-	let { children } = $props();
+	let { children, id = "" } = $props();
 </script>
 
-<section class="section">
+<section class="section" {id}>
 	<div class="content">
 		{@render children()}
 	</div>
