@@ -197,12 +197,13 @@
 
 	.scroll-hint {
 		margin-bottom: 2rem;
-		color: rgba(255, 255, 255, 0.3);
+		color: rgba(255, 255, 255, 0.8);
 		font-family: 'Oswald', sans-serif;
 		font-size: 0.9rem;
 		text-transform: uppercase;
 		letter-spacing: 3px;
 		user-select: none;
+		text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
 	}
 
 	.mobile-hint {
@@ -213,12 +214,26 @@
 		display: none;
 	}
 
+	@keyframes pulse {
+		0% { opacity: 0.7; transform: scale(1); }
+		50% { opacity: 1; transform: scale(1.05); }
+		100% { opacity: 0.7; transform: scale(1); }
+	}
+
 	@media (min-width: 769px) {
+		.scroll-hint {
+			position: absolute;
+			bottom: 8rem;
+			width: 100%;
+			margin-bottom: 0;
+		}
 		.mobile-hint {
 			display: none;
 		}
 		.desktop-hint {
-			display: inline;
+			display: inline-block;
+			font-size: 1.2rem;
+			animation: pulse 2s infinite;
 		}
 	}
 </style>
