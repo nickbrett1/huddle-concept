@@ -260,6 +260,12 @@
 		flex-direction: column;
 	}
 
+	.sidebar-group {
+		display: flex;
+		flex-direction: column;
+		flex: 1;
+	}
+
 	.spacer {
 		height: 40px; /* Align with title headers */
 		margin-bottom: 1rem;
@@ -271,7 +277,7 @@
 		align-items: center;
 		justify-content: center;
 		min-height: 150px;
-		height: 100%;
+		flex: 1;
 		writing-mode: vertical-lr;
 		transform: rotate(180deg);
 		padding: 1rem 0.5rem;
