@@ -55,7 +55,8 @@
 		<div class="spacer bottom"></div>
 
 		<div class="scroll-hint">
-			Swipe to Explore
+			<span class="mobile-hint">Swipe to Explore</span>
+			<span class="desktop-hint">Click Arrows to Explore</span>
 		</div>
 	</div>
 </Section>
@@ -202,5 +203,22 @@
 		text-transform: uppercase;
 		letter-spacing: 3px;
 		user-select: none;
+	}
+
+	.mobile-hint {
+		display: inline;
+	}
+
+	.desktop-hint {
+		display: none;
+	}
+
+	@media (min-width: 769px) {
+		.mobile-hint {
+			display: none;
+		}
+		.desktop-hint {
+			display: inline;
+		}
 	}
 </style>

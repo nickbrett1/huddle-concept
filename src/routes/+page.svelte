@@ -189,12 +189,12 @@
 	}
 
 	.arrow {
-		background: rgba(15, 17, 21, 0.5);
-		border: 1px solid rgba(255, 255, 255, 0.1);
+		background: rgba(15, 17, 21, 0.8);
+		border: 2px solid rgba(255, 255, 255, 0.5);
 		color: white;
 		border-radius: 50%;
-		width: 48px;
-		height: 48px;
+		width: 56px;
+		height: 56px;
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -202,12 +202,14 @@
 		pointer-events: auto; /* Re-enable pointer events for buttons */
 		transition: all 0.3s ease;
 		backdrop-filter: blur(4px);
+		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
 	}
 
 	.arrow:hover:not(:disabled) {
-		background: rgba(0, 175, 234, 0.2);
+		background: rgba(0, 175, 234, 0.3);
 		border-color: #00afea;
 		transform: scale(1.1);
+		box-shadow: 0 0 15px rgba(0, 175, 234, 0.4);
 	}
 
 	.arrow:disabled {
