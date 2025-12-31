@@ -35,3 +35,6 @@ wrangler.jsonc
 *.tar.gz
 *.rar
 target/
+
+# Verification
+verification/
