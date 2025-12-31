@@ -202,7 +202,6 @@
 
 	// --- Logic ---
 	function selectPersona(persona) {
-		console.log('Persona selected:', persona.id); // DEBUG
 		if (scriptTimeout) clearTimeout(scriptTimeout);
 		selectedPersona = persona;
 		messages = [];
@@ -212,7 +211,6 @@
 	}
 
 	function runScript(personaId, stepIndex) {
-		console.log('Running script step:', stepIndex); // DEBUG
 		const script = scripts[personaId];
 		if (!script || stepIndex >= script.length) return;
 
@@ -229,7 +227,6 @@
 	}
 
 	function processStep(step, personaId, stepIndex) {
-		console.log('Processing step:', step); // DEBUG
 		if (step.type === 'broadcast' || step.type === 'huddle') {
 			messages = [...messages, { ...step, id: Date.now() }];
 			// Auto advance
