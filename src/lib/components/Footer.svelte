@@ -19,20 +19,6 @@
 					</p>
 				</div>
 
-				<div class="card connect">
-					<h3>Connect</h3>
-					<ul class="links">
-						<li>
-							<span class="label">LinkedIn:</span>
-							<a href="https://www.linkedin.com/in/nick-brett?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" rel="noopener noreferrer">View Professional Profile</a>
-						</li>
-						<li>
-							<span class="label">Personal Portfolio:</span>
-							<a href="https://fintechnick.com" target="_blank" rel="noopener noreferrer">fintechnick.com</a>
-							<span class="note">(Note: This site is primarily focused on my work in fintech and data engineering applications)</span>
-						</li>
-					</ul>
-				</div>
 			</div>
 
 			<div class="column right-col">
@@ -45,6 +31,23 @@
 						It isn't just about translating rules; it's about using AI agents to make the game feel accessible, inclusive, and deeply engaging for everyone—whether they are a lifelong strategist or someone tuning in for the very first time. This pitch is a vision for a more connected fan experience, where the technology works behind the scenes to bring people into the heart of the action.
 					</p>
 				</div>
+			</div>
+		</div>
+
+		<div class="footer-bottom">
+			<div class="card connect">
+				<h3>Connect</h3>
+				<ul class="links">
+					<li>
+						<span class="label">LinkedIn:</span>
+						<a href="https://www.linkedin.com/in/nick-brett?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" rel="noopener noreferrer">View Professional Profile</a>
+					</li>
+					<li>
+						<span class="label">Personal Portfolio:</span>
+						<a href="https://fintechnick.com" target="_blank" rel="noopener noreferrer">fintechnick.com</a>
+						<span class="note">(Note: This site is primarily focused on my work in fintech and data engineering applications)</span>
+					</li>
+				</ul>
 			</div>
 		</div>
 
@@ -66,6 +69,19 @@
 		margin-bottom: 2rem;
 		text-align: center;
 		color: white;
+	}
+
+	.footer-bottom {
+		margin-top: 3rem;
+		padding-bottom: 12rem; /* Add padding to clear navigation dots */
+		text-align: center;
+		width: 100%;
+		display: flex;
+		justify-content: center;
+	}
+
+	.footer-bottom .card.connect {
+		text-align: center;
 	}
 
 	.grid {
