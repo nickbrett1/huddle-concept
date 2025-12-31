@@ -110,6 +110,7 @@
 	}
 
 	.subtitle {
+		font-family: 'Oswald', sans-serif;
 		font-size: clamp(1rem, 2vw, 1.5rem);
 		font-weight: 400;
 		color: #FFFFFF;

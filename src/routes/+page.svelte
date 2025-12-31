@@ -123,8 +123,12 @@
 		padding: 0;
 		background-color: #0f1115;
 		color: white;
-		font-family: 'Oswald', 'Impact', sans-serif;
+		font-family: 'Montserrat', sans-serif;
 		overflow: hidden; /* Prevent body scroll, let app-container handle it */
+	}
+
+	:global(h1), :global(h2), :global(h3), :global(h4), :global(h5), :global(h6) {
+		font-family: 'Oswald', 'Impact', sans-serif;
 	}
 
 	.app-container {
