@@ -45,9 +45,6 @@
 			</div>
 		</div>
 
-		<footer class="footer">
-			&copy; 2024 The Huddle Concept. All rights reserved.
-		</footer>
 	</div>
 </Section>
 
@@ -138,13 +135,6 @@
 		font-style: italic;
 	}
 
-	.footer {
-		text-align: center;
-		font-size: 0.8rem;
-		opacity: 0.3;
-		padding-top: 2rem;
-		margin-top: auto;
-	}
 
 	@media (max-width: 768px) {
 		.grid {
