@@ -54,14 +54,12 @@
 				</ul>
 			</div>
 		</div>
-		<div style="height: 15rem; width: 100%; flex-shrink: 0;"></div> <!-- Force spacer -->
 	</div>
 </Section>
 
 <style>
 	.content-wrapper {
 		width: 100%;
-		height: 100%;
 		display: flex;
 		flex-direction: column;
 	}
@@ -91,7 +89,6 @@
 		display: grid;
 		grid-template-columns: 1fr 1fr;
 		gap: 3rem;
-		flex-grow: 1;
 		align-items: start;
 	}
 
