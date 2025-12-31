@@ -39,6 +39,10 @@
 				<h3>Connect</h3>
 				<ul class="links">
 					<li>
+						<span class="label">Email:</span>
+						<a href="mailto:nick@fintechnick.com">nick@fintechnick.com</a>
+					</li>
+					<li>
 						<span class="label">LinkedIn:</span>
 						<a href="https://www.linkedin.com/in/nick-brett?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" rel="noopener noreferrer">View Professional Profile</a>
 					</li>
@@ -50,7 +54,7 @@
 				</ul>
 			</div>
 		</div>
-
+		<div style="height: 15rem; width: 100%; flex-shrink: 0;"></div> <!-- Force spacer -->
 	</div>
 </Section>
 
@@ -73,7 +77,6 @@
 
 	.footer-bottom {
 		margin-top: 3rem;
-		padding-bottom: 12rem; /* Add padding to clear navigation dots */
 		text-align: center;
 		width: 100%;
 		display: flex;
@@ -156,13 +159,14 @@
 		color: white;
 	}
 
-	a {
+	/* Target links specifically to override any global/browser defaults */
+	.links a, .links a:visited {
 		color: #00afea;
 		text-decoration: none;
 		transition: color 0.2s;
 	}
 
-	a:hover {
+	.links a:hover {
 		text-decoration: underline;
 		color: white;
 	}
