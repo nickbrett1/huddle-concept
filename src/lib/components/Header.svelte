@@ -48,7 +48,7 @@
 				<a href="#demo" onclick={closeMenu}>Demo</a>
 				<a href="#engine" onclick={closeMenu}>Engine</a>
 				<a href="#opportunity" onclick={closeMenu}>Opportunity</a>
-				<a href="#footer" onclick={closeMenu}>Author</a>
+				<a href="#footer" onclick={closeMenu}>About</a>
 			</div>
 		</nav>
 	{/if}
