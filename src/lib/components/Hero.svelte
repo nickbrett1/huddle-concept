@@ -187,7 +187,7 @@
 
 	.sub-headline {
 		font-size: clamp(0.9rem, 1.5vw, 1.2rem);
-		color: #00afea;
+		color: white;
 		margin: 0;
 		letter-spacing: 0.05em;
 		font-weight: 500;
