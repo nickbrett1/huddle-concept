@@ -14,7 +14,7 @@
 		{ id: 'demo', label: 'Demo' },
 		{ id: 'engine', label: 'Engine' },
 		{ id: 'opportunity', label: 'Opportunity' },
-		{ id: 'footer', label: 'Author' }
+		{ id: 'footer', label: 'About' }
 	];
 
 	let activeIndex = $state(0);

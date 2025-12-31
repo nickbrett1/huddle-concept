@@ -5,7 +5,7 @@
 
 <Section {id}>
 	<div class="content-wrapper">
-		<h2 class="section-title">THE AUTHOR</h2>
+		<h2 class="section-title">ABOUT</h2>
 		<div class="profile">
 			<!-- Placeholder for Author Image -->
 			<div class="avatar"></div>
