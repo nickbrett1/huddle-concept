@@ -10,7 +10,10 @@
 		<div class="grid">
 			<div class="column left-col">
 				<div class="card profile">
-					<h3>Profile: Nick — Builder and Product Leader</h3>
+					<div class="profile-header">
+						<img src="/nick-profile.jpg" alt="Nick - Profile" class="profile-pic" />
+						<h3>Profile: Nick — Builder and Product Leader</h3>
+					</div>
 					<p>
 						Based in New York, I am a builder and product leader with nearly 20 years of experience designing the data systems that power global platforms. My background spans the full spectrum of the data lifecycle: from defining and building real-time, data-powered applications at Bloomberg LP, to scaling the data infrastructure for Meta’s Messenger—one of the world's largest consumer communication apps—and most recently, architecting the data systems for $60B+ AUM at Two Sigma.
 					</p>
@@ -83,6 +86,22 @@
 		text-align: left;
 	}
 
+	.profile-header {
+		display: flex;
+		align-items: center;
+		gap: 1.5rem;
+		margin-bottom: 1rem;
+	}
+
+	.profile-pic {
+		width: 100px;
+		height: 100px;
+		border-radius: 50%;
+		object-fit: cover;
+		border: 2px solid #00afea;
+		flex-shrink: 0;
+	}
+
 	h3 {
 		font-family: 'Oswald', sans-serif;
 		font-size: 1.5rem;
@@ -90,6 +109,11 @@
 		color: #00afea; /* Electric Blue */
 		margin-bottom: 1rem;
 		margin-top: 0;
+	}
+
+	/* Adjust h3 inside profile header to remove bottom margin since header handles it */
+	.profile-header h3 {
+		margin-bottom: 0;
 	}
 
 	p {
