@@ -24,7 +24,7 @@
                 details: [
                     { label: 'Overview', text: 'To ensure both sub-second speed and deep intelligence, our Knowledge Base operates through two distinct interfaces.' },
                     { label: 'Interface 1: The Fact Store (Structured)', text: 'Powers the Normalization Engine. Uses high-speed lookup joins to resolve IDs into names and stats, ensuring the "Live Pulse" is enriched without LLM latency.' },
-                    { label: 'Interface 2: The Vector Context Store (Unstructured)', text: 'Powers the Tactical Advisor. Uses semantic search (RAG) to retrieve historical narratives and tactical nuances, giving the AI Agent the context to explain the game\'s "Chess Match".' }
+                    { label: 'Interface 2: The Vector Context Store (Unstructured)', text: 'Powers the Tactical Analyzer. Uses semantic search (RAG) to retrieve historical narratives and tactical nuances, giving the AI Agent the context to explain the game\'s "Chess Match".' }
                 ]
 			},
             {
