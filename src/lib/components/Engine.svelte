@@ -126,6 +126,7 @@
 		<div class="header-group">
 			<h2 class="section-title">THE ENGINE</h2>
 			<h3 class="subtitle">TECHNICAL DEEP DIVE</h3>
+			<p class="interaction-hint">Select any component for more details</p>
 		</div>
 
 		<div class="diagram-grid">
@@ -268,6 +269,22 @@
 		color: rgba(255, 255, 255, 0.7);
 		margin: 0.5rem 0 0 0;
 		text-transform: uppercase;
+	}
+
+	.interaction-hint {
+		font-family: 'Montserrat', sans-serif;
+		font-size: 0.9rem;
+		color: #00afea;
+		margin-top: 1rem;
+		font-weight: 600;
+		letter-spacing: 0.05em;
+		animation: pulse 2s infinite;
+	}
+
+	@keyframes pulse {
+		0% { opacity: 0.7; }
+		50% { opacity: 1; }
+		100% { opacity: 0.7; }
 	}
 
 	.diagram-grid {
