@@ -90,16 +90,32 @@
 				}
 			]
 		},
-		delivery: {
+		edge_dispatcher: {
+			title: 'Edge Dispatcher Layer',
+			items: [
+				{
+					id: 'edge_dispatcher',
+					title: 'The Smart Dispatcher',
+					icon: 'M13 10V3L4 14h7v7l9-11h-7z',
+                    details: [
+                        { label: 'Edge Runtime', text: 'Cloudflare Workers act as the high-speed distribution hub, executing logic close to the user.' },
+                        { label: 'Delivery Protocol', text: 'Publishes narrative streams via Server Sent Events (SSE), ensuring a persistent, low-latency connection.' },
+                        { label: 'Routing', text: 'Routes millions of fans to their specific narrative cluster with sub-10ms latency.' }
+                    ]
+				}
+			]
+		},
+		client: {
 			title: 'Client Layer',
 			items: [
 				{
-					id: 'edge_delivery',
-					title: 'The Smart Dispatcher',
+					id: 'client_device',
+					title: 'The Subscriber',
 					icon: 'M17 2H7a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2zM12 18h.01',
                     details: [
-                        { label: 'Edge-Based Routing', text: 'We leverage Cloudflare Workers as a high-speed switchboard. By storing the User Vector at the Edge, we can route millions of fans to their specific narrative cluster with sub-10ms latency.' },
-                        { label: 'Regional Fan-Out', text: 'A localized Pub/Sub architecture ensures regional data centers only pull the specific narrative variants required by active fans in that area, optimizing global bandwidth.' }
+                        { label: 'Device', text: 'The user\'s mobile device, running the frontend application.' },
+                        { label: 'Subscription', text: 'Maintains a single lightweight SSE connection to the Edge Dispatcher to receive real-time updates.' },
+                        { label: 'Rendering', text: 'Visualizes the narrative stream, overlaying stats and stories onto the broadcast feed.' }
                     ]
 				}
 			]
@@ -211,11 +227,30 @@
 
 				<div class="connector">{@render animatedArrow()}</div>
 
-				<!-- Delivery -->
+				<!-- Edge Dispatcher -->
+				<div class="flow-step">
+					<h3 class="group-title">Edge Dispatcher Layer</h3>
+					<div class="nodes-row">
+						{#each data.edge_dispatcher.items as item}
+							<button
+								class="node wide"
+								class:active={selectedItem?.id === item.id}
+								onclick={() => select(item)}
+							>
+								<div class="node-label">{item.title}</div>
+								{@render icon(item.icon)}
+							</button>
+						{/each}
+					</div>
+				</div>
+
+				<div class="connector">{@render animatedArrow()}</div>
+
+				<!-- Client -->
 				<div class="flow-step">
 					<h3 class="group-title">Client Layer</h3>
 					<div class="nodes-row">
-						{#each data.delivery.items as item}
+						{#each data.client.items as item}
 							<button
 								class="node wide"
 								class:active={selectedItem?.id === item.id}
