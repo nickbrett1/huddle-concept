@@ -380,10 +380,7 @@
 	}
 
 	.node-label-large {
-		font-family: 'Oswald', sans-serif;
-		font-weight: 500;
-		text-transform: uppercase;
-		color: #00afea;
+		font-weight: 700;
 		margin-bottom: 0.5rem;
 		font-size: 1rem;
 	}
@@ -391,7 +388,7 @@
 	.node.box {
 		padding: 2rem 1rem;
 		background: rgba(255, 255, 255, 0.05);
-		border-style: dashed;
+		border-style: solid;
 		border-color: rgba(255, 255, 255, 0.2);
 	}
 
