@@ -6,23 +6,6 @@
 	let selectedItem = $state(null);
 
 	const data = {
-		context: {
-			title: 'Context & Control',
-			description: 'Global settings that drive the engine\'s personalization logic.',
-			icon: 'M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z M15 12a3 3 0 11-6 0 3 3 0 016 0z',
-			items: [
-				{
-					id: 'personas',
-					title: 'The User Vector',
-					icon: 'M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z',
-                    details: [
-                        { label: 'Source', text: 'Persona selection (Expat, Casual, Strategist) and interaction history.' },
-                        { label: 'Method', text: 'A dynamic User Profile Vector stored at the Edge.' },
-                        { label: 'Purpose', text: 'Defines the "How should I explain this?" layer, ensuring analogies and technical depth are tailored to the individual\'s knowledge level.' }
-                    ]
-				}
-			]
-		},
 		sources: [
 			{
 				id: 'live_pulse',
@@ -43,7 +26,17 @@
                     { label: 'Method', text: 'A specialized Knowledge Base used for Retrieval-Augmented Generation (RAG).' },
                     { label: 'Purpose', text: 'Provides the "Why does this matter?"—linking a current sack or touchdown to a player\'s season narrative or a team\'s 10-year drought.' }
                 ]
-			}
+			},
+            {
+                id: 'personas',
+                title: 'The User Vector',
+                icon: 'M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z',
+                details: [
+                    { label: 'Source', text: 'Persona selection (Expat, Casual, Strategist) and interaction history.' },
+                    { label: 'Method', text: 'A dynamic User Profile Vector stored at the Edge.' },
+                    { label: 'Purpose', text: 'Defines the "How should I explain this?" layer, ensuring analogies and technical depth are tailored to the individual\'s knowledge level.' }
+                ]
+            }
 		],
 		ingestion: {
 			title: 'Ingestion',
@@ -128,24 +121,6 @@
 		</div>
 
 		<div class="diagram-grid">
-			<!-- Sidebar: Context -->
-			<div class="sidebar-col">
-				<div class="spacer desktop-only"></div>
-				<div class="sidebar-group">
-					<div class="group-title desktop-only" aria-hidden="true">&nbsp;</div>
-					{#each data.context.items as item}
-						<button
-							class="node sidebar-node"
-							class:active={selectedItem === item}
-							onclick={() => select(item)}
-						>
-							{@render icon(item.icon)}
-							<span class="node-label sidebar-label">{item.title}</span>
-						</button>
-					{/each}
-				</div>
-			</div>
-
 			<!-- Main Flow -->
 			<div class="main-col">
 				<!-- Sources -->
@@ -289,48 +264,10 @@
 
 	.diagram-grid {
 		display: grid;
-		grid-template-columns: 80px 1fr;
+		grid-template-columns: 1fr;
 		gap: 2rem;
 		width: 100%;
 		position: relative;
-	}
-
-	/* Sidebar */
-	.sidebar-col {
-		display: flex;
-		flex-direction: column;
-	}
-
-	.sidebar-group {
-		display: flex;
-		flex-direction: column;
-		flex: 1;
-	}
-
-	.spacer {
-		height: 40px; /* Align with title headers */
-		margin-bottom: 1rem;
-	}
-
-	.sidebar-node {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-		min-height: 150px;
-		flex: 1;
-		writing-mode: vertical-lr;
-		transform: rotate(180deg);
-		padding: 1rem 0.5rem;
-		gap: 0.5rem;
-	}
-
-	.sidebar-label {
-		font-family: 'Oswald', sans-serif;
-		text-transform: uppercase;
-		letter-spacing: 0.1em;
-		font-size: 0.9rem;
-		color: #00afea;
 	}
 
 	/* Main Flow */
@@ -555,30 +492,6 @@
 		.diagram-grid {
 			grid-template-columns: 1fr;
 			gap: 1rem;
-		}
-
-		.sidebar-col {
-			flex-direction: row;
-			margin-bottom: 1rem;
-		}
-
-		.sidebar-node {
-			writing-mode: horizontal-tb;
-			transform: none;
-			min-height: auto;
-			height: auto;
-			flex-direction: row;
-			width: 100%;
-			padding: 0.75rem;
-		}
-
-		.sidebar-label {
-			margin-left: 0.5rem;
-			font-size: 1rem;
-		}
-
-		.spacer.desktop-only, .group-title.desktop-only {
-			display: none;
 		}
 
 		.nodes-row {
