@@ -396,7 +396,10 @@
 	}
 
 	.section-title {
-		font-size: 3rem;
+		font-family: 'Oswald', sans-serif;
+		font-size: clamp(2.5rem, 5vw, 4rem);
+		font-weight: 700;
+		text-transform: uppercase;
 		color: #fff;
 		margin: 0;
 		line-height: 1;
