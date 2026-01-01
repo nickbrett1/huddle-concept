@@ -19,11 +19,12 @@
 			},
 			{
 				id: 'knowledge_base',
-				title: 'The Knowledge Base',
+				title: 'The Dual-Interface Knowledge Base',
 				icon: 'M4 7v10c0 2.21 3.58 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.58 4 8 4s8-1.79 8-4M4 7c0-2.21 3.58-4 8-4s8 1.79 8 4m0 5c0 2.21-3.58 4-8 4s-8-1.79-8-4',
                 details: [
-                    { label: 'The Core: Vector Database', text: 'Optimized for high-speed "similarity searches" (e.g., Pinecone, Weaviate, or pgvector). It retrieves not just stats, but narrative "lore"—like instantly fetching Aaron Rodgers\' Packers history when he\'s mentioned in a Jets game.' },
-                    { label: 'The Embedding Model', text: 'Converts sports jargon into machine-understandable vectors. We can use OpenAI text-embedding-3 for speed, or fine-tuned Hugging Face models (sentence-transformers) to deeply understand nuanced sports terminology.' }
+                    { label: 'Overview', text: 'To ensure both sub-second speed and deep intelligence, our Knowledge Base operates through two distinct interfaces.' },
+                    { label: 'Interface 1: The Fact Store (Structured)', text: 'Powers the Normalization Engine. Uses high-speed lookup joins to resolve IDs into names and stats, ensuring the "Live Pulse" is enriched without LLM latency.' },
+                    { label: 'Interface 2: The Vector Context Store (Unstructured)', text: 'Powers the Tactical Advisor. Uses semantic search (RAG) to retrieve historical narratives and tactical nuances, giving the AI Agent the context to explain the game\'s "Chess Match".' }
                 ]
 			},
             {
@@ -47,7 +48,7 @@
 					details: [
 						{ label: 'Engine', text: 'Apache Flink creates a "Unified Event Stream," acting as a traffic controller to ensure all data speaks the same language via a Schema Registry.' },
 						{ label: 'Syncing', text: 'Uses "Watermarks" to synchronize out-of-order streams (e.g., aligning faster stats feeds with slower audio commentary).' },
-						{ label: 'Live Pulse', text: 'Flattens raw WebSockets and performs "Lookup Joins" against the Knowledge Base to create "Rich Play Events" (e.g., adding season stats to a live sack).' },
+						{ label: 'Live Pulse', text: 'Flattens raw WebSockets and performs "Lookup Joins" against Interface 1 (The Fact Store) to create "Rich Play Events" (e.g., adding season stats to a live sack).' },
 						{ label: 'Architecture', text: 'Unifies data streams into the Enrichment Layer, preventing data silos and ensuring real-time accuracy.' }
 					]
 				}
@@ -70,7 +71,7 @@
                     title: 'The Tactical Analyzer',
                     icon: 'M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z',
                     details: [
-                        { label: 'Enrichment', text: 'Deconstructs the play to add context. We can use an LLM (utilizing Retrieval-Augmented Generation from the Knowledge Base) to identify formations and find historical precedents for the current situation.' },
+                        { label: 'Enrichment', text: 'Deconstructs the play to add context. We can use an LLM (utilizing Retrieval-Augmented Generation from Interface 2: The Vector Context Store) to identify formations and find historical precedents for the current situation.' },
                         { label: 'Output', text: 'Tags the stream with tactical insights (e.g., { formation: "Spider 2 Y Banana", similar_to: "Super Bowl XLIX" }).' }
                     ]
                 }
