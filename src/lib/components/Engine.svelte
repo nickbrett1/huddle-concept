@@ -346,7 +346,7 @@
 
 	.node {
 		flex: 1;
-		background: rgba(15, 17, 21, 0.8);
+		background: black;
 		border: 1px solid rgba(0, 175, 234, 0.3);
 		border-radius: 8px;
 		padding: 1rem;
@@ -387,7 +387,6 @@
 
 	.node.box {
 		padding: 2rem 1rem;
-		background: rgba(255, 255, 255, 0.05);
 		border-style: solid;
 		border-color: rgba(255, 255, 255, 0.2);
 	}
