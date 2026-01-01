@@ -38,7 +38,7 @@
 			}
 		],
 		ingestion: {
-			title: 'Ingestion',
+			title: 'Ingestion Layer',
 			items: [
 				{
 					id: 'normalize',
@@ -156,7 +156,7 @@
 
 				<!-- Ingestion -->
 				<div class="flow-step">
-					<h3 class="group-title">Ingestion</h3>
+					<h3 class="group-title">Ingestion Layer</h3>
 					<div class="nodes-row">
 						{#each data.ingestion.items as item}
 							<button
