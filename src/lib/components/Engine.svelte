@@ -48,7 +48,7 @@
 					details: [
 						{ label: 'Engine', text: 'Apache Flink creates a "Unified Event Stream," acting as a traffic controller to ensure all data speaks the same language via a Schema Registry.' },
 						{ label: 'Syncing', text: 'Uses "Watermarks" to synchronize out-of-order streams (e.g., aligning faster stats feeds with slower audio commentary).' },
-						{ label: 'Live Pulse', text: 'Flattens raw WebSockets and performs "Lookup Joins" against The Knowledge Base to create "Rich Play Events" (e.g., adding season stats to a live sack).' },
+						{ label: 'Live Pulse', text: 'Flattens raw WebSockets and performs "Lookup Joins" against The Knowledge Base Interface 1 (The Fact Store) to create "Rich Play Events" (e.g., adding season stats to a live sack).' },
 						{ label: 'Architecture', text: 'Unifies data streams into the Enrichment Layer, preventing data silos and ensuring real-time accuracy.' }
 					]
 				}
