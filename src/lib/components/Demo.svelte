@@ -515,25 +515,6 @@
 		box-shadow: 0 0 30px rgba(0, 175, 234, 0.1);
 	}
 
-	.tv-placeholder {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		color: #444;
-		font-family: 'Oswald', sans-serif;
-		letter-spacing: 1px;
-	}
-
-	.tv-placeholder span {
-		font-size: 1.2rem;
-		font-weight: bold;
-	}
-
-	.tv-placeholder small {
-		font-size: 0.8rem;
-		opacity: 0.7;
-	}
-
 	.tv-stand {
 		width: 80px;
 		height: 10px;
