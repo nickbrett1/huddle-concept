@@ -31,9 +31,9 @@
                 title: 'The User Vector',
                 icon: 'M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z',
                 details: [
-                    { label: 'Source', text: 'Persona selection (Expat, Casual, Strategist) and interaction history.' },
-                    { label: 'Method', text: 'A dynamic User Profile Vector stored at the Edge.' },
-                    { label: 'Purpose', text: 'Informs the Intelligence Layer, ensuring analogies and technical depth are tailored to the individual\'s knowledge level.' }
+                    { label: 'Source', text: 'Systematically generated from diverse data points including purchase history (e.g., location), viewing habits, and interaction signals.' },
+                    { label: 'Method', text: 'A dynamic User Profile Vector that evolves with every interaction. It is not manually selected, but algorithmically constructed to reflect the user\'s true preferences.' },
+                    { label: 'Purpose', text: 'Informs the Intelligence Layer to automatically adapt narrative style and complexity (e.g., "Expat" vs "Strategist") without user intervention.' }
                 ]
 			}
 		],
@@ -444,7 +444,7 @@
 		backdrop-filter: blur(10px);
 		border-top: 1px solid rgba(0, 175, 234, 0.5);
 		padding: 1.5rem 2rem;
-		z-index: 100;
+		z-index: 2000;
 		display: flex;
 		align-items: flex-start;
 		justify-content: space-between;
