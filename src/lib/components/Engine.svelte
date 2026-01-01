@@ -80,7 +80,7 @@
 			]
 		},
 		delivery: {
-			title: 'Engineering for Scale',
+			title: 'Client Layer',
 			items: [
 				{
 					id: 'edge_delivery',
@@ -182,7 +182,7 @@
 
 				<!-- Delivery -->
 				<div class="flow-step">
-					<h3 class="group-title">Engineering for Scale</h3>
+					<h3 class="group-title">Client Layer</h3>
 					<div class="nodes-row">
 						{#each data.delivery.items as item}
 							<button
