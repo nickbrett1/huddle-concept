@@ -50,9 +50,15 @@
 			items: [
 				{
 					id: 'normalize',
-					title: 'Normalization',
-					description: 'Standardizing disparate data sources into the Huddle Event Schema.',
-					icon: 'M3 6l7 7v4h4v-4l7-7V4H3z'
+					title: 'Normalization Engine',
+					icon: 'M3 6l7 7v4h4v-4l7-7V4H3z',
+					details: [
+						{ label: 'Engine', text: 'Apache Flink creates a "Unified Event Stream," acting as a traffic controller to ensure all data speaks the same language via a Schema Registry.' },
+						{ label: 'Syncing', text: 'Uses "Watermarks" to synchronize out-of-order streams (e.g., aligning faster stats feeds with slower audio commentary).' },
+						{ label: 'Live Pulse', text: 'Flattens raw WebSockets and performs "Lookup Joins" against the Knowledge Base to create "Rich Play Events" (e.g., adding season stats to a live sack).' },
+						{ label: 'Personalization', text: 'Applies the "User Vector" (e.g., {soccer_affinity: 0.9}) as a filter, ensuring the output is translated into the user\'s preferred terminology.' },
+						{ label: 'Architecture', text: 'Replaces separate apps with one Unified Intelligence Layer, avoiding data silos and ensuring real-time accuracy.' }
+					]
 				}
 			]
 		},
