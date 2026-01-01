@@ -1,3 +1,7 @@
+<svelte:head>
+	<title>The Huddle Concept</title>
+</svelte:head>
+
 <script>
 	import Header from '$lib/components/Header.svelte';
 	import Hero from '$lib/components/Hero.svelte';
