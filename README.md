@@ -1,6 +1,6 @@
 # The Huddle - Personalized Sports Broadcasting Concept
 
-"The Huddle" is a conceptual sports broadcasting overlay engine designed to bridge the gap between technical gameplay and casual fan engagement. By leveraging real-time data and personalized storytelling, it aims to bring a "Drive to Survive" narrative effect to live American sports.
+"The Huddle" is a product concept for a sports broadcasting overlay engine designed to bridge the gap between technical gameplay and casual fan engagement. By leveraging real-time data and personalized storytelling, it aims to bring a "Drive to Survive" narrative effect to live American sports.
 
 ## 🚀 Project Overview
 
