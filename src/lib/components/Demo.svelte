@@ -23,7 +23,7 @@
 			id: 'strategist',
 			name: 'THE STRATEGIST',
 			description: 'US-based, focuses on X\'s and O\'s and chess match.',
-			icon: '♟️'
+			icon: '♙'
 		}
 	];
 
