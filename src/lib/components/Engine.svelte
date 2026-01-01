@@ -13,7 +13,7 @@
 				icon: 'M12 2a10 10 0 1 0 10 10 M12 12 2 2 M12 12L2 2',
                 details: [
                     { label: 'Method', text: 'Low-latency ingestion via WebSockets.' },
-                    { label: 'Source', text: 'Play-by-play statistics combined with live transcriptions of broadcast commentary.' },
+                    { label: 'Source', text: 'Play-by-play statistics, raw audio feed, and live transcriptions of broadcast commentary.' },
                     { label: 'Purpose', text: 'Provides the immediate "What just happened?" updates. This is the heartbeat of the real-time experience.' }
                 ]
 			},
