@@ -48,22 +48,21 @@
 						{ label: 'Engine', text: 'Apache Flink creates a "Unified Event Stream," acting as a traffic controller to ensure all data speaks the same language via a Schema Registry.' },
 						{ label: 'Syncing', text: 'Uses "Watermarks" to synchronize out-of-order streams (e.g., aligning faster stats feeds with slower audio commentary).' },
 						{ label: 'Live Pulse', text: 'Flattens raw WebSockets and performs "Lookup Joins" against the Knowledge Base to create "Rich Play Events" (e.g., adding season stats to a live sack).' },
-						{ label: 'Personalization', text: 'Applies the "User Vector" (e.g., {soccer_affinity: 0.9}) as a filter, ensuring the output is translated into the user\'s preferred terminology.' },
-						{ label: 'Architecture', text: 'Unifies data streams into a single Intelligence Layer, preventing data silos and ensuring real-time accuracy.' }
+						{ label: 'Architecture', text: 'Unifies data streams into the Enrichment Layer, preventing data silos and ensuring real-time accuracy.' }
 					]
 				}
 			]
 		},
-		core: {
-			title: 'The Intelligence Layer',
+		enrichment: {
+			title: 'Enrichment Layer',
 			items: [
 				{
 					id: 'drama',
 					title: 'The Drama Meter',
 					icon: 'M3 3v18h18 M18 9l-5 5-4-4-3 3',
                     details: [
-                        { label: 'Function', text: 'The system monitors Win Probability (WP) swings in real-time. When a play results in a massive shift (e.g., a 15% swing on a single interception), the system flags it as a "High Drama" event.' },
-                        { label: 'Goal', text: 'The AI Agent proactively interjects to explain the gravity of the shift, ensuring even a Casual fan understands the stakes.' }
+                        { label: 'Enrichment', text: 'Calculates the emotional weight of the moment. Monitors real-time Win Probability (WP) and can use lightweight audio models to analyze broadcast sentiment.' },
+                        { label: 'Output', text: 'Flags the event stream with metadata (e.g., { drama_score: 9.5, type: "game_changing_play" }).' }
                     ]
 				},
                 {
@@ -71,18 +70,22 @@
                     title: 'The Tactical Analyzer',
                     icon: 'M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z',
                     details: [
-                        { label: 'Function', text: 'Deconstructs the play (e.g., formation recognition) using the Knowledge Base.' },
-                        { label: 'Role', text: 'Identifies patterns and historical precedents that a raw stats feed would miss.' }
+                        { label: 'Enrichment', text: 'Deconstructs the play to add context. We can use an LLM (fed by the Knowledge Base) to identify formations and find historical precedents for the current situation.' },
+                        { label: 'Output', text: 'Tags the stream with tactical insights (e.g., { formation: "Spider 2 Y Banana", similar_to: "Super Bowl XLIX" }).' }
                     ]
-                },
+                }
+			]
+		},
+		intelligence: {
+			title: 'Intelligence Layer',
+			items: [
 				{
 					id: 'adaptation',
 					title: 'The Adaptation Agent',
 					icon: 'M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z',
                     details: [
-                        { label: 'Function', text: 'This layer acts as the bridge. It translates the technical insights from the Tactical Analyzer using the User Vector.' },
-                        { label: 'Example (Expat)', text: 'If a "Safety" occurs, it uses a soccer analogy to explain the concept.' },
-                        { label: 'Example (Strategist)', text: 'It presents the raw defensive formation data directly.' }
+                        { label: 'Decision Engine', text: 'The brain that decides WHAT to show. It filters the enriched stream based on the User Vector.' },
+                        { label: 'LLM Generation', text: 'Uses an LLM to generate the final personalized text (e.g., explaining a "Safety" using a soccer analogy for an "Expat" user) or selects the best visualization.' }
                     ]
 				}
 			]
@@ -169,11 +172,30 @@
 
 				<div class="connector">{@render animatedArrow()}</div>
 
-				<!-- The Engine -->
+				<!-- Enrichment -->
+				<div class="flow-step">
+					<h3 class="group-title">Enrichment Layer</h3>
+					<div class="nodes-row">
+						{#each data.enrichment.items as item}
+							 <button
+								class="node box"
+								class:active={selectedItem === item}
+								onclick={() => select(item)}
+							>
+								<div class="node-label-large">{item.title}</div>
+								{@render icon(item.icon)}
+							</button>
+						{/each}
+					</div>
+				</div>
+
+				<div class="connector">{@render animatedArrow()}</div>
+
+				<!-- Intelligence -->
 				<div class="flow-step">
 					<h3 class="group-title">Intelligence Layer</h3>
-					<div class="nodes-grid-engine">
-						{#each data.core.items as item}
+					<div class="nodes-row">
+						{#each data.intelligence.items as item}
 							 <button
 								class="node box"
 								class:active={selectedItem === item}
@@ -302,13 +324,6 @@
 	.nodes-row {
 		display: flex;
 		gap: 1rem;
-		width: 100%;
-	}
-
-	.nodes-grid-engine {
-		display: grid;
-		grid-template-columns: repeat(3, 1fr);
-		gap: 1.5rem;
 		width: 100%;
 	}
 
@@ -504,10 +519,6 @@
 
 		.nodes-row {
 			flex-direction: column;
-		}
-
-		.nodes-grid-engine {
-			grid-template-columns: 1fr;
 		}
 
 		.info-panel {
