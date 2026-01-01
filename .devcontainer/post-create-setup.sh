@@ -34,8 +34,6 @@ git config --global --add safe.directory /workspaces/huddle-concept
 
 
 
-echo "INFO: Adding Svelte MCP to Gemini..."
-gemini mcp add -t http -s project svelte https://mcp.svelte.dev/mcp
 
 echo "Setup bridget to access Chrome DevTools Protocol over a secure tunnel..."
 socat TCP-LISTEN:9222,fork,bind=127.0.0.1 TCP:host.docker.internal:9222 &

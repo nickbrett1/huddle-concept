@@ -8,13 +8,16 @@
       "upgradePackages": true,
       "username": "node"
     },
+    "ghcr.io/devcontainers-contrib/features/apt-packages:1": {
+      "packages": "socat"
+    },
     "ghcr.io/devcontainers/features/python:1": {},
     "ghcr.io/devcontainers/features/node:1": {},
     "ghcr.io/devcontainers/features/java:1": {
       "version": "21"
     }
   },
-  "postCreateCommand": "./post-create-setup.sh",
+  "postCreateCommand": ".devcontainer/post-create-setup.sh",
   "customizations": {
     "vscode": {
       "extensions": [
