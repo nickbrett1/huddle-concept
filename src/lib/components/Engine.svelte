@@ -23,9 +23,7 @@
 				icon: 'M4 7v10c0 2.21 3.58 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.58 4 8 4s8-1.79 8-4M4 7c0-2.21 3.58-4 8-4s8 1.79 8 4m0 5c0 2.21-3.58 4-8 4s-8-1.79-8-4',
                 details: [
                     { label: 'The Core: Vector Database', text: 'Optimized for high-speed "similarity searches" (e.g., Pinecone, Weaviate, or pgvector). It retrieves not just stats, but narrative "lore"—like instantly fetching Aaron Rodgers\' Packers history when he\'s mentioned in a Jets game.' },
-                    { label: 'The Orchestration', text: 'Tools like LlamaIndex or LangChain act as the "brain." LlamaIndex handles ingesting diverse data (PDF guides, SQL tables), while LangChain manages the reasoning flow: "Identify user persona -> Query Vector DB -> Generate context-aware response."' },
-                    { label: 'The Embedding Model', text: 'Converts sports jargon into machine-understandable vectors. We use OpenAI text-embedding-3 for speed, or fine-tuned Hugging Face models (sentence-transformers) to deeply understand nuanced NFL terminology.' },
-                    { label: 'RAG Flow Example', text: '1. Ingestion: Load decades of NFL history. 2. Retrieval: "Live Pulse" detects a Nickel Defense. 3. Augmentation: Query DB for a "Cricket analogy" for an Expat user. 4. Generation: Output the perfect personalized explanation.' }
+                    { label: 'The Embedding Model', text: 'Converts sports jargon into machine-understandable vectors. We use OpenAI text-embedding-3 for speed, or fine-tuned Hugging Face models (sentence-transformers) to deeply understand nuanced NFL terminology.' }
                 ]
 			},
             {
