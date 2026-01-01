@@ -33,7 +33,7 @@
                 details: [
                     { label: 'Source', text: 'Persona selection (Expat, Casual, Strategist) and interaction history.' },
                     { label: 'Method', text: 'A dynamic User Profile Vector stored at the Edge.' },
-                    { label: 'Purpose', text: 'Defines the "How should I explain this?" layer, ensuring analogies and technical depth are tailored to the individual\'s knowledge level.' }
+                    { label: 'Purpose', text: 'Informs the Intelligence Layer, ensuring analogies and technical depth are tailored to the individual\'s knowledge level.' }
                 ]
             }
 		],
@@ -49,7 +49,7 @@
 						{ label: 'Syncing', text: 'Uses "Watermarks" to synchronize out-of-order streams (e.g., aligning faster stats feeds with slower audio commentary).' },
 						{ label: 'Live Pulse', text: 'Flattens raw WebSockets and performs "Lookup Joins" against the Knowledge Base to create "Rich Play Events" (e.g., adding season stats to a live sack).' },
 						{ label: 'Personalization', text: 'Applies the "User Vector" (e.g., {soccer_affinity: 0.9}) as a filter, ensuring the output is translated into the user\'s preferred terminology.' },
-						{ label: 'Architecture', text: 'Replaces separate apps with one Unified Intelligence Layer, avoiding data silos and ensuring real-time accuracy.' }
+						{ label: 'Architecture', text: 'Unifies data streams into a single Intelligence Layer, preventing data silos and ensuring real-time accuracy.' }
 					]
 				}
 			]
@@ -66,14 +66,23 @@
                         { label: 'Goal', text: 'The AI Agent proactively interjects to explain the gravity of the shift, ensuring even a Casual fan understands the stakes.' }
                     ]
 				},
+                {
+                    id: 'tactical_ai',
+                    title: 'The Tactical Analyzer',
+                    icon: 'M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z',
+                    details: [
+                        { label: 'Function', text: 'Deconstructs the play (e.g., formation recognition) using the Knowledge Base.' },
+                        { label: 'Role', text: 'Identifies patterns and historical precedents that a raw stats feed would miss.' }
+                    ]
+                },
 				{
 					id: 'adaptation',
 					title: 'The Adaptation Agent',
 					icon: 'M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z',
                     details: [
-                        { label: 'Function', text: 'This layer acts as the bridge. It cross-references the "Live Pulse" with the "User Vector."' },
-                        { label: 'Example (Expat)', text: 'If a "Safety" occurs, it pulls a "Soccer" analogy from the Knowledge Base.' },
-                        { label: 'Example (Strategist)', text: 'It pulls the specific defensive formation (e.g., Nickel vs. Dime) that led to the play.' }
+                        { label: 'Function', text: 'This layer acts as the bridge. It translates the technical insights from the Tactical Analyzer using the User Vector.' },
+                        { label: 'Example (Expat)', text: 'If a "Safety" occurs, it uses a soccer analogy to explain the concept.' },
+                        { label: 'Example (Strategist)', text: 'It presents the raw defensive formation data directly.' }
                     ]
 				}
 			]
@@ -298,7 +307,7 @@
 
 	.nodes-grid-engine {
 		display: grid;
-		grid-template-columns: repeat(2, 1fr);
+		grid-template-columns: repeat(3, 1fr);
 		gap: 1.5rem;
 		width: 100%;
 	}
