@@ -23,7 +23,7 @@
 				icon: 'M4 7v10c0 2.21 3.58 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.58 4 8 4s8-1.79 8-4M4 7c0-2.21 3.58-4 8-4s8 1.79 8 4m0 5c0 2.21-3.58 4-8 4s-8-1.79-8-4',
                 details: [
                     { label: 'The Core: Vector Database', text: 'Optimized for high-speed "similarity searches" (e.g., Pinecone, Weaviate, or pgvector). It retrieves not just stats, but narrative "lore"—like instantly fetching Aaron Rodgers\' Packers history when he\'s mentioned in a Jets game.' },
-                    { label: 'The Embedding Model', text: 'Converts sports jargon into machine-understandable vectors. We can use OpenAI text-embedding-3 for speed, or fine-tuned Hugging Face models (sentence-transformers) to deeply understand nuanced NFL terminology.' }
+                    { label: 'The Embedding Model', text: 'Converts sports jargon into machine-understandable vectors. We can use OpenAI text-embedding-3 for speed, or fine-tuned Hugging Face models (sentence-transformers) to deeply understand nuanced sports terminology.' }
                 ]
 			},
             {
