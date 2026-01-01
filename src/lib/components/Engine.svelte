@@ -85,8 +85,9 @@
 					title: 'The Adaptation Agent',
 					icon: 'M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z',
                     details: [
-                        { label: 'Hyper-Personalization', text: 'While we showcase three core personas, the system could use real-time clustering to generate thousands of narrative variants based on the "Knowledge Space" of the audience.' },
-                        { label: 'Centralized Generation', text: 'To prevent bottlenecks, the AI generates content for "Clusters" of similar users, ensuring we never pay for the same LLM insight twice.' }
+                        { label: 'The Engine of the Huddle', text: 'The Adaptation Agent is the primary orchestration layer responsible for all LLM calls. It acts as the "translator" between complex sports data and the end user, transforming raw information into human-centric narratives.' },
+                        { label: 'Dual-Mode Intelligence', text: 'The agent processes two distinct data streams to drive engagement:\n• Reactive Match Streaming: It monitors real-time match telemetry (scores, penalties, momentum shifts) to trigger proactive narrative updates.\n• On-Demand Interaction: It handles direct user inquiries and conversational responses, allowing fans to ask "why" at any moment and receive an instant, persona-specific explanation.' },
+                        { label: 'Scalable Hyper-Personalization', text: 'To maintain performance and cost-efficiency, the agent utilizes Real-Time Clustering. While it can generate thousands of narrative variants based on the audience\'s "Knowledge Space," it groups similar users into clusters. This ensures we maximize LLM utility—generating high-value insights once and serving them to many—without sacrificing the feeling of a bespoke experience.' }
                     ]
 				}
 			]
@@ -116,6 +117,7 @@
                     details: [
                         { label: 'Device', text: 'The user\'s mobile device, running the frontend application.' },
                         { label: 'Subscription', text: 'Maintains a single lightweight SSE connection to the Edge Dispatcher to receive real-time updates.' },
+                        { label: 'Interaction', text: 'Can send HTTP requests back to "The Adaptation Agent" with further questions and comments, enabling a two-way conversation.' },
                         { label: 'Rendering', text: 'Visualizes the narrative stream, overlaying stats and stories onto the broadcast feed.' }
                     ]
 				}
