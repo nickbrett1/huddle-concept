@@ -281,9 +281,9 @@
 
 				<div class="persona-selector">
 					<h3 class="label">PICK YOUR PERSONA</h3>
-					<p class="persona-footnote">In a real implementation, personas would be highly personalised based on the users past interaction with the app and other preferences. This wouldn’t be a selection step.</p>
-					<div class="buttons">
-						{#each personas as persona}
+					<p class="instruction">Select from the three sample personas below to start the demo:</p>
+					<div class="buttons" class:unselected={!selectedPersona}>
+						{#each personas as persona, i}
 							<button
 								class="persona-btn"
 								class:active={selectedPersona?.id === persona.id}
@@ -291,12 +291,13 @@
 							>
 								<span class="icon">{persona.icon}</span>
 								<div class="info">
-									<span class="name">{persona.name}</span>
+									<span class="name">PERSONA {i+1}: {persona.name}</span>
 									<span class="desc">{persona.description}</span>
 								</div>
 							</button>
 						{/each}
 					</div>
+					<p class="persona-footnote">In a real implementation, personas would be highly personalised based on the users past interaction with the app and other preferences. This wouldn’t be a selection step.</p>
 				</div>
 
 			</div>
@@ -422,25 +423,46 @@
 	}
 
 	.label {
-		font-size: 1.2rem;
-		color: #00afea;
+		font-family: 'Oswald', sans-serif;
+		font-size: 1.4rem;
+		color: #ffffff;
 		margin-bottom: 0.5rem;
 		display: block;
 		font-weight: 700;
+		letter-spacing: 0.05em;
+	}
+
+	.instruction {
+		font-size: 1rem;
+		color: #ccc;
+		margin-bottom: 1.5rem;
 	}
 
 	.persona-footnote {
 		font-size: 0.8rem;
-		color: #888;
-		margin-bottom: 1.5rem;
+		color: #666;
+		margin-top: 1.5rem;
 		line-height: 1.4;
 		max-width: 90%;
+		font-style: italic;
 	}
 
 	.buttons {
 		display: flex;
 		flex-direction: column;
 		gap: 1rem;
+	}
+
+	/* Pulse effect to draw attention when nothing is selected */
+	.buttons.unselected .persona-btn {
+		border-color: rgba(0, 175, 234, 0.4);
+		animation: border-pulse 2s infinite;
+	}
+
+	@keyframes border-pulse {
+		0% { border-color: rgba(0, 175, 234, 0.2); box-shadow: 0 0 0 rgba(0, 175, 234, 0); }
+		50% { border-color: rgba(0, 175, 234, 0.6); box-shadow: 0 0 10px rgba(0, 175, 234, 0.2); }
+		100% { border-color: rgba(0, 175, 234, 0.2); box-shadow: 0 0 0 rgba(0, 175, 234, 0); }
 	}
 
 	.persona-btn {
