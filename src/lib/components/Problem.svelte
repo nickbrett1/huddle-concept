@@ -6,7 +6,7 @@
 <Section {id}>
 	<div class="content-wrapper">
 		<h2 class="section-title">THE PROBLEM</h2>
-		<p class="subtitle">THE HIGH BARRIER TO ENTRY FOR THE NEXT GENERATION OF FANS.</p>
+		<p class="subtitle">THE HIGH BARRIER TO ENTRY FOR THE NEXT GENERATION OF FANS</p>
 
 		<p class="section-text">
 			"88% of us use a second screen while watching, yet most of us are still locked out of the story."

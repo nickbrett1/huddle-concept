@@ -20,7 +20,7 @@
 		<div class="center-content">
 			<h1 class="brand-title">THE HUDDLE</h1>
 
-			<p class="tagline">DECODING THE GAME INTO THE STORIES YOU'LL LOVE.</p>
+			<p class="tagline">DECODING THE GAME INTO THE STORIES YOU'LL LOVE</p>
 
 			<div class="transformation-display">
 				<span class="intro">WE TRANSFORM</span>

@@ -276,7 +276,7 @@
 			<div class="controls-col">
 				<div class="header-group">
 					<h2 class="section-title">THE LIVE HUDDLE</h2>
-					<p class="subtitle">EXPERIENCE THE INTERACTIVE DEMO.</p>
+					<p class="subtitle">EXPERIENCE THE INTERACTIVE DEMO</p>
 				</div>
 
 				<div class="persona-selector">
