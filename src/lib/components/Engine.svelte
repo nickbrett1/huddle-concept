@@ -148,6 +148,9 @@
 		<div class="header-group">
 			<h2 class="section-title">THE ENGINE</h2>
 			<h3 class="subtitle">TECHNICAL DEEP DIVE</h3>
+			<p class="description">
+				This diagram outlines the technical architecture for how 'The Huddle' could be built, transforming raw data into personalized experiences.
+			</p>
 			<p class="interaction-hint">Select any component for more details</p>
 		</div>
 
@@ -329,6 +332,15 @@
 		color: rgba(255, 255, 255, 0.7);
 		margin: 0.5rem 0 0 0;
 		text-transform: uppercase;
+	}
+
+	.description {
+		font-family: 'Montserrat', sans-serif;
+		font-size: 1rem;
+		color: rgba(255, 255, 255, 0.8);
+		margin: 1rem auto;
+		max-width: 800px;
+		line-height: 1.5;
 	}
 
 	.interaction-hint {
