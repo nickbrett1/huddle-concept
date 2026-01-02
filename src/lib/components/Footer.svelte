@@ -11,8 +11,8 @@
 			<div class="column left-col">
 				<div class="card profile">
 					<div class="profile-header">
-						<img src="/nick-profile.jpg" alt="Nick - Profile" class="profile-pic" />
-						<h3>Profile: Nick — Builder and Product Leader</h3>
+						<img src="/nick-profile.jpg" alt="Nick Brett - Profile" class="profile-pic" />
+						<h3>Profile: Nick Brett — Builder and Product Leader</h3>
 					</div>
 					<p>
 						Based in New York, I am a builder and product leader with nearly 20 years of experience designing the data systems that power global platforms. My background spans the full spectrum of the data lifecycle: from defining and building real-time, data-powered applications at Bloomberg LP, to scaling the data infrastructure for Meta’s Messenger—one of the world's largest consumer communication apps—and most recently, architecting the data systems for $60B+ AUM at Two Sigma.
