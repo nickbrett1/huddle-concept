@@ -48,7 +48,7 @@
 					</li>
 					<li>
 						<span class="label">Personal Portfolio:</span>
-						<a href="https://fintechnick.com" target="_blank" rel="noopener noreferrer">fintechnick.com</a>
+						<a href="https://fintechnick.com">fintechnick.com</a>
 						<span class="note">(Note: This site is primarily focused on my work in fintech and data engineering applications)</span>
 					</li>
 				</ul>
