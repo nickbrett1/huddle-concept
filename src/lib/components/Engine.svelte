@@ -100,7 +100,7 @@
 					title: 'The Smart Dispatcher',
 					icon: 'M13 10V3L4 14h7v7l9-11h-7z',
                     details: [
-                        { label: 'Edge Runtime', text: 'Cloudflare Workers act as the high-speed distribution hub, executing logic close to the user.' },
+                        { label: 'Edge Runtime', text: 'Edge functions (e.g. Cloudflare Workers) act as the high-speed distribution hub. This approach decreases latency when subscribing, provides better load balancing, and ensures greater resiliency by distributing stateful connection management.' },
                         { label: 'Delivery Protocol', text: 'Publishes narrative streams via Server Sent Events (SSE), ensuring a persistent, low-latency connection.' },
                         { label: 'Routing', text: 'Routes millions of fans to their specific narrative cluster with sub-10ms latency.' }
                     ]
