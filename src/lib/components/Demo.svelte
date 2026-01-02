@@ -297,7 +297,7 @@
 							</button>
 						{/each}
 					</div>
-					<p class="persona-footnote">In a real implementation, personas would be highly personalised based on the users past interaction with the app and other preferences. This wouldn’t be a selection step.</p>
+					<p class="persona-footnote">In a real implementation, personas would be highly personalised based on the user's past interaction with the app and other preferences. This wouldn’t be a selection step.</p>
 				</div>
 
 			</div>
