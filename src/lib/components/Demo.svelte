@@ -492,6 +492,10 @@
 
 	.icon {
 		font-size: 1.5rem;
+		width: 3rem;
+		display: flex;
+		justify-content: center;
+		flex-shrink: 0;
 	}
 
 	.info {
