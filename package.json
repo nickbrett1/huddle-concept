@@ -23,7 +23,7 @@
     "svelte-check": "^4.4.1",
     "typescript": "^5.7.2",
     "vite": "^7.3.0",
-    "@sveltejs/adapter-cloudflare": "^7.2.6",
+    "@sveltejs/adapter-cloudflare": "^7.2.8",
     "wrangler": "^4.65.0"
 	},
   "overrides": {
