@@ -80,4 +80,6 @@ steps:
       - ./scripts/setup-wrangler-config.sh "dev"
       - npm run build --if-present
       - npx --yes wrangler deploy
-      - ./scripts/sync-doppler-secrets.sh --project common --config dev --env default
+      # This repo has no scripts/sync-doppler-secrets.sh (its wrangler config
+      # comes from scripts/setup-wrangler-config.sh alone), so the generated
+      # sync step is dropped rather than failing with exit 127.
