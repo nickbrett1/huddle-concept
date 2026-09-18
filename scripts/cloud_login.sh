@@ -35,4 +35,25 @@ echo
 echo "Setting up Wrangler configuration..."
 doppler run --project huddle-concept --config dev -- ./scripts/setup-wrangler-config.sh dev
 
+# Tailscale login. Joining the tailnet is what gives the agent a non-loopback
+# card URL and what makes the container reachable by the LiteLLM proxy, which
+# dials the card. --hostname sets the name it joins under, and that name is what
+# the agent advertises, so it is the repo name.
+if command -v tailscale &> /dev/null; then
+  if ! pgrep -x tailscaled > /dev/null; then
+    echo "INFO: Starting Tailscale daemon..."
+    sudo start-stop-daemon --start --background --oknodo --pidfile /var/run/tailscaled.pid --make-pidfile --exec /usr/sbin/tailscaled -- --state=/var/lib/tailscale/tailscaled.state
+    sleep 2
+  fi
+  if ! sudo tailscale status &> /dev/null; then
+    echo "INFO: Logging into Tailscale..."
+    sudo tailscale up --hostname=huddle-concept
+  else
+    echo "OK: Already logged in to Tailscale."
+  fi
+else
+  echo "WARN: tailscale is not installed. Build the container first - post-create"
+  echo "      installs it - then re-run this script."
+fi
+
 echo "Cloud login script finished."
